@@ -284,13 +284,55 @@
     </div>
   </div>
 
+  <!-- Live Supabase Integration Script -->
   <script>
     function openModal(id) { document.getElementById(id).classList.add('active'); }
     function closeModal(id) { document.getElementById(id).classList.remove('active'); }
-    function handleFormSubmit(e) {
+
+    const SUPABASE_URL = 'https://gqmarabspmnadhamxjxi.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4';
+
+    async function handleFormSubmit(e) {
       e.preventDefault();
-      e.target.reset();
-      document.getElementById('form-success').classList.remove('hidden');
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Wird übermittelt...';
+
+      const payload = {
+        name: form.querySelector('input[type="text"]').value,
+        email: form.querySelector('input[type="email"]').value,
+        industry: form.querySelectorAll('input[type="text"]')[1].value || null
+      };
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/beta_signups`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          form.reset();
+          document.getElementById('form-success').classList.remove('hidden');
+          submitBtn.innerText = 'Erfolgreich beworben';
+        } else {
+          alert('Fehler beim Speichern. Bitte versuche es später noch einmal.');
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Kostenlos für die Beta bewerben';
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Verbindungsfehler zur Datenbank.');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Kostenlos für die Beta bewerben';
+      }
     }
   </script>
 </body>
