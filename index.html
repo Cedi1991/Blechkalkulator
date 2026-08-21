@@ -49,6 +49,7 @@
     .gradient-text {
       background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .glow-cyan {
@@ -128,13 +129,13 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#demo" data-i18n="hero_cta_primary" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
+        <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
           <i class="fa-solid fa-download text-lg"></i>
-          <span>Demo & Preisangebot anfordern</span>
+          <span data-i18n="hero_cta_primary">Demo & Preisangebot anfordern</span>
         </a>
-        <a href="#screenshots" data-i18n="hero_cta_secondary" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
+        <a href="#screenshots" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-play text-xs text-cyan-400"></i>
-          <span>Software-Screenshots ansehen</span>
+          <span data-i18n="hero_cta_secondary">Software-Screenshots ansehen</span>
         </a>
       </div>
 
@@ -148,8 +149,8 @@
             <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="hero_app_title">Blechkalkulator Pro v1.0 [OMAX® Live Connected]</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono" data-i18n="hero_sync_badge">
-              <i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync aktiv
+            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+              <i class="fa-solid fa-check-circle mr-1"></i> <span data-i18n="hero_sync_badge">Auto-Sync aktiv</span>
             </span>
             <span id="hero-lang-badge" class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
               🇩🇪 DE
@@ -511,10 +512,10 @@
         hero_badge: "Echtzeit-Kopplung mit OMAX® MAKE & DXF-Dateien",
         hero_title: 'Wasserstrahl-Angebote in <br class="hidden sm:inline"><span class="gradient-text">5 Sekunden statt 15 Minuten.</span>',
         hero_subtitle: "Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% exakte OMAX® Maschinenzeit-Übernahme und 1-Klick-Angebotstexte für dein ERP oder E-Mail.",
-        hero_cta_primary: '<i class="fa-solid fa-download text-lg"></i> <span>Demo & Preisangebot anfordern</span>',
-        hero_cta_secondary: '<i class="fa-solid fa-play text-xs text-cyan-400"></i> <span>Software-Screenshots ansehen</span>',
+        hero_cta_primary: "Demo & Preisangebot anfordern",
+        hero_cta_secondary: "Software-Screenshots ansehen",
         hero_app_title: "Blechkalkulator Pro v1.0 [OMAX® Live Connected]",
-        hero_sync_badge: '<i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync aktiv',
+        hero_sync_badge: "Auto-Sync aktiv",
         stat_1_val: "5 Sek.",
         stat_1_lbl: "Kalkulationsdauer pro Teil",
         stat_2_lbl: "OMAX® MAKE Genauigkeit",
@@ -602,10 +603,10 @@
         hero_badge: "Real-Time Sync with OMAX® MAKE & DXF Files",
         hero_title: 'Waterjet Quotations in <br class="hidden sm:inline"><span class="gradient-text">5 Seconds instead of 15 Minutes.</span>',
         hero_subtitle: "The ultra-fast desktop solution for job shops & waterjet cutters. Automatic DXF path envelope detection, 100% exact OMAX® machine time import, and 1-click quote exports for ERP or email.",
-        hero_cta_primary: '<i class="fa-solid fa-download text-lg"></i> <span>Request Demo & Pricing</span>',
-        hero_cta_secondary: '<i class="fa-solid fa-play text-xs text-cyan-400"></i> <span>View Software Screenshots</span>',
+        hero_cta_primary: "Request Demo & Pricing",
+        hero_cta_secondary: "View Software Screenshots",
         hero_app_title: "Blechkalkulator Pro v1.0 [OMAX® Live Connected]",
-        hero_sync_badge: '<i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync active',
+        hero_sync_badge: "Auto-Sync active",
         stat_1_val: "5 Sec.",
         stat_1_lbl: "Quoting time per part",
         stat_2_lbl: "OMAX® MAKE Precision",
@@ -719,7 +720,7 @@
       const dict = I18N_DATA[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.innerText = dict[key];
+        if (dict[key]) el.innerHTML = dict[key];
       });
 
       document.querySelectorAll('[data-i18n-html]').forEach(el => {
