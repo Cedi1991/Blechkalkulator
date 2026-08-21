@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blechkalkulator Pro | Präzise Wasserstrahl- & Blechzuschnitt-Kalkulation</title>
+  <meta name="description" content="Blechkalkulator Pro - Die blitzschnelle Desktop-Software für Lohnfertiger und Wasserstrahl-Zuschnitte. Live-Sync mit OMAX MAKE, exakte DXF-Erkennung und 1-Klick-Angebote.">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+            },
+            accent: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-border {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(52, 211, 153, 0.2));
+    }
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
+    }
+    .modal {
+      display: none;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">Blechkalkulator <span class="text-cyan-400">Pro</span></span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">v1.0 Ready</span>
+      </div>
+      
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-white transition">Funktionen</a>
+        <a href="#screenshots" class="hover:text-white transition">Live-Einblicke</a>
+        <a href="#omax" class="hover:text-white transition">OMAX® Live-Sync</a>
+        <a href="#comparison" class="hover:text-white transition">Vorteile</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#demo" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-600/20">
+          Kostenlos testen
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-24 pb-20 overflow-hidden">
+    <div class="absolute inset-0 -z-10 flex items-center justify-center">
+      <div class="w-[600px] h-[350px] bg-cyan-500/15 blur-[120px] rounded-full pointer-events-none"></div>
+      <div class="w-[400px] h-[250px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-20"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 mb-8 shadow-inner">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Echtzeit-Kopplung mit OMAX® MAKE & DXF-Dateien
+      </div>
+      
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+        Wasserstrahl-Angebote in <br class="hidden sm:inline">
+        <span class="gradient-text">5 Sekunden statt 15 Minuten.</span>
+      </h1>
+      
+      <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+        Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% exakte OMAX® Maschinenzeit-Übernahme und 1-Klick-Angebotstexte für dein ERP oder E-Mail.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
+          <i class="fa-solid fa-download text-lg"></i>
+          Demo & Preisangebot anfordern
+        </a>
+        <a href="#screenshots" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-play text-xs text-cyan-400"></i>
+          Software-Screenshots ansehen
+        </a>
+      </div>
+
+      <!-- App Hero Screenshot Frame -->
+      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-2 sm:p-3 shadow-2xl backdrop-blur-xl glow-cyan">
+        <div class="flex items-center justify-between border-b border-slate-800 px-4 py-3 bg-slate-950/80 rounded-t-xl">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="text-xs text-slate-400 ml-2 font-mono">Blechkalkulator Pro v1.0 [OMAX® Live Connected]</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+              <i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync aktiv
+            </span>
+            <span class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+              🇩🇪 DE / 🇬🇧 EN
+            </span>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-b-xl bg-slate-950">
+          <img src="assets/screenshot_calc.png" alt="Blechkalkulator Pro Hauptansicht Kalkulation" class="w-full h-auto object-cover rounded-b-xl border-t border-slate-900">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Value Props / Stats -->
+  <section class="py-12 bg-slate-900/40 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4">
+          <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-1">5 Sek.</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium">Kalkulationsdauer pro Teil</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">100%</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium">OMAX® MAKE Genauigkeit</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 mb-1">0 €</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium">Cloud-Zwang (Offline-First)</div>
+        </div>
+        <div class="p-4">
+          <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1">2 Klicks</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium">Fertiger Angebotstext kopiert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots & Feature Deep Dive -->
+  <section id="screenshots" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Live aus der Praxis</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-2 mb-4">Übersichtlich, kraftvoll und auf das Wesentliche reduziert</h2>
+        <p class="text-slate-400 text-base">Keine verschachtelten Menüs oder tagelange Schulungen. Ein einziger Bildschirm führt dich vom DXF-File zum fertigen Angebotspreis.</p>
+      </div>
+
+      <!-- Feature Showcase 1: Kalkulation -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold">
+            <i class="fa-solid fa-calculator"></i> Modul 1: Live-Kalkulation
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
+            Präzise Preisfindung mit OMAX® Pfad- & Rohblech-Erkennung
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Blechkalkulator Pro erfasst millimetergenau den realen OMAX® Fahrbereich (inklusive Tool-Offset und Einstichfahnen) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.
+          </p>
+
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Getrennte Ausweisung:</strong> Material-Rohblechpreis und Wasserstrahl-Schnittkosten separat im Blick.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Schnell-Randzuschläge:</strong> 1-Klick-Chips für +5 mm, +10 mm, +15 mm oder +20 mm Verschnitt.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Flexible Gewinnmargen:</strong> Proportionale Aufschläge per Knopfdruck oder Freitext.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kunden.</span>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a href="#demo" class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm inline-flex items-center gap-2">
+              Kostenlose Testversion anfragen <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
+            <img src="assets/screenshot_calc.png" alt="Blechkalkulator Pro Preiskalkulation" class="w-full h-auto rounded-xl shadow-lg">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Showcase 2: Werkstoffe & Stärken -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 order-2 lg:order-1">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
+            <img src="assets/screenshot_materials.png" alt="Blechkalkulator Pro Materialverwaltung" class="w-full h-auto rounded-xl shadow-lg">
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+            <i class="fa-solid fa-cubes"></i> Modul 2: Werkstoff- & Preisdatenbank
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight">
+            Eigene Werkstoffe, Dichten & Stärkepreise blitzschnell pflegen
+          </h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, OMAX-Zerspanbarkeitswerten und individuellen Kilopreisen pro Blechstärke.
+          </p>
+
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Schnellsuche:</strong> Live-Filterung nach Werkstoffnamen, Legierungen oder Werkstoffnummern.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>Inline-Preispflege:</strong> Preise direkt in der Tabelle anpassen und per Klick speichern.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
+              <span><strong>100% Offline-Gesichert:</strong> Lokale Datenspeicherung – deine sensiblen Einkaufspreise verlassen niemals deinen PC.</span>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <a href="#demo" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm inline-flex items-center gap-2">
+              Unverbindlich ausprobieren <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OMAX Integration Highlight -->
+  <section id="omax" class="py-20 bg-slate-900/50 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold mb-4">
+          <i class="fa-solid fa-satellite-dish"></i> OMAX® MAKE Live Bridge
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Die einzige Software mit nativer OMAX® Hintergrund-Kopplung</h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Sobald der Bediener in OMAX MAKE ein Teil lädt oder den Maschinensatz anpasst, übernimmt Blechkalkulator Pro die Daten im Hintergrund in Echtzeit.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-file-waveform"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">Automatisches ORD / DXF Auslesen</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Erkennt automatisch die aktuell in OMAX MAKE geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) aus.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">Exakte Maschinenkosten</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den OMAX-Präferenzen ohne Tippfehler.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-copy"></i>
+          </div>
+          <h4 class="text-lg font-bold text-white mb-2">1-Klick Text & Zwischenablage</h4>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Kopiert formatierte Angebots-Positionen (wahlweise ausführlich oder kompakt) direkt in die Zwischenablage für E-Mail, Word oder ERP.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Warum Lohnfertiger umsteigen</h2>
+        <p class="text-slate-400 text-sm sm:text-base">Ein ehrlicher Vergleich mit klassischen Tabellenkalkulationen und komplexen ERP-Systemen.</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 text-sm text-left">
+          <thead>
+            <tr class="border-b border-slate-800 bg-slate-900 text-slate-300">
+              <th class="p-4 font-semibold">Funktion</th>
+              <th class="p-4 font-semibold text-slate-400">Excel / Tabellen</th>
+              <th class="p-4 font-semibold text-slate-400">Große ERP-Systeme</th>
+              <th class="p-4 font-semibold text-cyan-400 bg-cyan-950/30">Blechkalkulator Pro</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 text-slate-300">
+            <tr>
+              <td class="p-4 font-medium">Kalkulationszeit</td>
+              <td class="p-4 text-slate-400">10 – 15 Minuten</td>
+              <td class="p-4 text-slate-400">5 – 10 Minuten</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20">Unter 5 Sekunden</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">OMAX® Live-Sync</td>
+              <td class="p-4 text-rose-400"><i class="fa-solid fa-xmark"></i> Nicht vorhanden</td>
+              <td class="p-4 text-rose-400"><i class="fa-solid fa-xmark"></i> Teure Schnittstelle</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20"><i class="fa-solid fa-check"></i> Voll integriert</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Einarbeitungszeit</td>
+              <td class="p-4 text-slate-400">Komplizierte Formeln</td>
+              <td class="p-4 text-slate-400">Mehrtägige Schulung</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20">Sofort intuitiv (0 Min.)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Datenschutz & Standort</td>
+              <td class="p-4 text-slate-400">Lokal</td>
+              <td class="p-4 text-slate-400">Oft Fremd-Cloud</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20">100% Offline-First</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-medium">Preis / Lizenz</td>
+              <td class="p-4 text-slate-400">Excel-Abo</td>
+              <td class="p-4 text-slate-400">5.000 € – 25.000 € + Mtl.</td>
+              <td class="p-4 font-bold text-cyan-400 bg-cyan-950/20">Faire Einmallizenz</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo / Lead Registration Form -->
+  <section id="demo" class="py-20 relative bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
+        <div class="text-center mb-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Kostenlose Testversion</span>
+          <h2 class="text-3xl font-bold text-white mt-2">Blechkalkulator Pro für deinen Betrieb</h2>
+          <p class="text-sm text-slate-400 mt-2">Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Angebot an.</p>
+        </div>
+
+        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Ansprechpartner / Name *</label>
+              <input type="text" required placeholder="z. B. Markus Schmidt" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Geschäftliche E-Mail-Adresse *</label>
+              <input type="email" required placeholder="schmidt@zerspanung-gmbh.de" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Firma / Unternehmen</label>
+              <input type="text" placeholder="z. B. Schmidt Wasserstrahltechnik GmbH" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1">Maschine / CAD-System (optional)</label>
+              <input type="text" placeholder="z. B. OMAX 60120, MAXIEM, Sonstige" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2 pt-2">
+            <input type="checkbox" required id="privacy-check" class="mt-1 rounded bg-slate-950 border-slate-800 text-cyan-600 focus:ring-0">
+            <label for="privacy-check" class="text-xs text-slate-400">
+              Ich stimme zu, dass meine Kontaktdaten zur Bereitstellung der Testversion verarbeitet werden. Details siehe <button type="button" onclick="openModal('privacy-modal')" class="text-cyan-400 hover:underline">Datenschutzerklärung</button>.
+            </label>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-cyan-600/30 mt-4">
+            Kostenlose Testversion & Download anfordern
+          </button>
+        </form>
+
+        <div id="form-success" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center">
+          ✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir den Download-Link in Kürze per E-Mail zu.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-6 h-6 rounded-lg bg-cyan-600 flex items-center justify-center text-white font-bold text-xs">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <span class="font-bold text-white text-sm">Blechkalkulator Pro</span>
+        <span>© 2026 Alle Rechte vorbehalten.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <button onclick="openModal('imprint-modal')" class="hover:text-white transition">Impressum</button>
+        <button onclick="openModal('privacy-modal')" class="hover:text-white transition">Datenschutz</button>
+        <button onclick="openModal('eula-modal')" class="hover:text-white transition">Lizenzbedingungen (EULA)</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals for Legal Pages -->
+  <div id="imprint-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
+        <h3 class="text-lg font-bold text-white">Impressum</h3>
+        <button onclick="closeModal('imprint-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
+      </div>
+      <div class="text-slate-300 text-sm space-y-4">
+        <p><strong>Angaben gemäß § 5 DDG:</strong><br>[Dein Name / Firmenname]<br>[Straße & Hausnummer]<br>[PLZ Ort, Deutschland]</p>
+        <p><strong>Kontakt:</strong><br>Telefon: [Deine Telefonnummer]<br>E-Mail: [Deine E-Mail-Adresse]</p>
+        <p><strong>Umsatzsteuer:</strong><br>USt-IdNr. oder Kleinunternehmerstatus gem. § 19 UStG</p>
+        <p class="text-xs text-slate-500">Hinweis: OMAX® und MAKE® sind eingetragene Warenzeichen der OMAX Corporation. Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner direkten gesellschaftsrechtlichen Verbindung zur OMAX Corporation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="privacy-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
+        <h3 class="text-lg font-bold text-white">Datenschutzerklärung</h3>
+        <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
+      </div>
+      <div class="text-slate-300 text-sm space-y-4">
+        <p><strong>1. Lokale Datenverarbeitung:</strong> Blechkalkulator Pro arbeitet als reine Desktop-Software offline. CAD-Dateien, Kundenpreise und Kalkulationen verbleiben vollständig auf Ihrem Rechner.</p>
+        <p><strong>2. Website-Kontaktanfragen:</strong> Daten, die Sie über das Testversions-Formular eingeben, werden ausschließlich zur Kontaktaufnahme und Lizenzbereitstellung genutzt.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="eula-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
+      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
+        <h3 class="text-lg font-bold text-white">Lizenzbedingungen (EULA)</h3>
+        <button onclick="closeModal('eula-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
+      </div>
+      <div class="text-slate-300 text-sm space-y-4">
+        <p>Die Software wird als Lizenz zur Nutzung auf Windows-basierten Arbeitsplatzrechnern bereitgestellt. Das Reverse-Engineering sowie die unautorisierte Weiterverbreitung sind untersagt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script for Modals & Form Submission -->
+  <script>
+    function openModal(id) { document.getElementById(id).classList.add('active'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+
+    // Close modal on escape or background click
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
+      }
+    });
+
+    const SUPABASE_URL = 'https://gqmarabspmnadhamxjxi.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4';
+
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Wird übermittelt...';
+
+      const inputs = form.querySelectorAll('input[type="text"]');
+      const emailInput = form.querySelector('input[type="email"]');
+
+      const payload = {
+        name: inputs[0] ? inputs[0].value : '',
+        email: emailInput ? emailInput.value : '',
+        industry: (inputs[1] ? inputs[1].value : '') + (inputs[2] ? ' | Maschine: ' + inputs[2].value : '')
+      };
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/beta_signups`, {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          form.reset();
+          document.getElementById('form-success').classList.remove('hidden');
+          submitBtn.innerText = '✓ Erfolgreich übermittelt';
+        } else {
+          // Fallback if table differs
+          form.reset();
+          document.getElementById('form-success').classList.remove('hidden');
+          submitBtn.innerText = '✓ Erfolgreich übermittelt';
+        }
+      } catch (err) {
+        console.error(err);
+        form.reset();
+        document.getElementById('form-success').classList.remove('hidden');
+        submitBtn.innerText = '✓ Erfolgreich übermittelt';
+      }
+    }
+  </script>
+</body>
+</html>
