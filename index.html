@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blechkalkulator Pro | Waterjet & Sheet Metal Quotation Software</title>
-  <meta name="description" content="Blechkalkulator Pro - The high-speed desktop software for waterjet cutting & sheet metal quoting. Real-time OMAX MAKE sync, DXF parsing, and 1-click quotes.">
+  <title>Blechkalkulator Pro | Schnelle Wasserstrahl- & Blechzuschnitt-Kalkulation (OMAX®-kompatibel)</title>
+  <meta name="description" content="Blechkalkulator Pro - Die blitzschnelle Desktop-Software für Wasserstrahlschneider & Blechbearbeiter. Kompatibel mit OMAX® MAKE & DXF-Dateien für 1-Klick-Angebote.">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -49,6 +49,7 @@
     .gradient-text {
       background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .glow-cyan {
@@ -83,7 +84,7 @@
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#features" data-i18n="nav_features" class="hover:text-white transition">Funktionen</a>
         <a href="#screenshots" data-i18n="nav_screenshots" class="hover:text-white transition">Live-Einblicke</a>
-        <a href="#omax" data-i18n="nav_omax" class="hover:text-white transition">OMAX® Live-Sync</a>
+        <a href="#omax" data-i18n="nav_omax" class="hover:text-white transition">OMAX®-Kompatibilität</a>
         <a href="#comparison" data-i18n="nav_comparison" class="hover:text-white transition">Vorteile</a>
       </nav>
 
@@ -115,7 +116,7 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 mb-8 shadow-inner">
         <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span data-i18n="hero_badge">Echtzeit-Kopplung mit OMAX® MAKE & DXF-Dateien</span>
+        <span data-i18n="hero_badge">Automatische Schnittdaten-Übernahme (kompatibel mit OMAX® MAKE & DXF)</span>
       </div>
       
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight" data-i18n-html="hero_title">
@@ -124,17 +125,17 @@
       </h1>
       
       <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">
-        Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% exakte OMAX® Maschinenzeit-Übernahme und 1-Klick-Angebotstexte für dein ERP oder E-Mail.
+        Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% präzise Schnittzeiterfassung und 1-Klick-Angebotstexte für dein ERP oder E-Mail.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#demo" data-i18n="hero_cta_primary" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
+        <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
           <i class="fa-solid fa-download text-lg"></i>
-          <span>Demo & Preisangebot anfordern</span>
+          <span data-i18n="hero_cta_primary">Demo & Preisangebot anfordern</span>
         </a>
-        <a href="#screenshots" data-i18n="hero_cta_secondary" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
+        <a href="#screenshots" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-play text-xs text-cyan-400"></i>
-          <span>Software-Screenshots ansehen</span>
+          <span data-i18n="hero_cta_secondary">Software-Screenshots ansehen</span>
         </a>
       </div>
 
@@ -145,11 +146,11 @@
             <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="hero_app_title">Blechkalkulator Pro v1.0 [OMAX® Live Connected]</span>
+            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="hero_app_title">Blechkalkulator Pro v1.0 [Schnittdaten-Sync aktiv]</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono" data-i18n="hero_sync_badge">
-              <i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync aktiv
+            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+              <i class="fa-solid fa-check-circle mr-1"></i> <span data-i18n="hero_sync_badge">Auto-Sync aktiv</span>
             </span>
             <span id="hero-lang-badge" class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
               🇩🇪 DE
@@ -173,11 +174,11 @@
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">100%</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_2_lbl">OMAX® MAKE Genauigkeit</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_2_lbl">Präzise Maschinenzeit-Übernahme</div>
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 mb-1">0 €</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_3_lbl">Cloud-Zwang (Offline-First)</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_3_lbl">Cloud-Zwang (100% Offline-First)</div>
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1" data-i18n="stat_4_val">2 Klicks</div>
@@ -203,10 +204,10 @@
             <i class="fa-solid fa-calculator"></i> <span data-i18n="feat1_badge">Modul 1: Live-Kalkulation</span>
           </div>
           <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight" data-i18n="feat1_title">
-            Präzise Preisfindung mit OMAX® Pfad- & Rohblech-Erkennung
+            Präzise Preisfindung mit Pfad- & Rohblech-Erkennung
           </h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat1_desc">
-            Blechkalkulator Pro erfasst millimetergenau den realen OMAX® Fahrbereich (inklusive Tool-Offset und Einstichfahnen) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.
+            Blechkalkulator Pro erfasst millimetergenau den realen Werkzeugbahn-Fahrbereich (inklusive Tool-Offset und Einstichfahnen kompatibler CNC-/Wasserstrahl-Dateien) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.
           </p>
 
           <ul class="space-y-3 text-sm text-slate-300">
@@ -224,7 +225,7 @@
             </li>
             <li class="flex items-start gap-3">
               <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat1_point4"><strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kunden.</span>
+              <span data-i18n-html="feat1_point4"><strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kundenangebote.</span>
             </li>
           </ul>
 
@@ -258,7 +259,7 @@
             Eigene Werkstoffe, Dichten & Stärkepreise blitzschnell pflegen
           </h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat2_desc">
-            Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, OMAX-Zerspanbarkeitswerten und individuellen Kilopreisen pro Blechstärke.
+            Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, Schnittkennwerten und individuellen Kilopreisen pro Blechstärke.
           </p>
 
           <ul class="space-y-3 text-sm text-slate-300">
@@ -291,11 +292,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold mb-4">
-          <i class="fa-solid fa-satellite-dish"></i> <span>OMAX® MAKE Live Bridge</span>
+          <i class="fa-solid fa-satellite-dish"></i> <span data-i18n="omax_badge">Schnittdaten-Live-Bridge</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="omax_sec_title">Die einzige Software mit nativer OMAX® Hintergrund-Kopplung</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="omax_sec_title">Schnittstellen-Erfassung kompatibel mit OMAX® MAKE</h2>
         <p class="text-slate-400 text-sm sm:text-base" data-i18n="omax_sec_subtitle">
-          Sobald der Bediener in OMAX MAKE ein Teil lädt oder den Maschinensatz anpasst, übernimmt Blechkalkulator Pro die Daten im Hintergrund in Echtzeit.
+          Sobald in OMAX MAKE ein Teil geladen oder der Maschinensatz angepasst wird, kann Blechkalkulator Pro die Schnittdaten im Hintergrund in Echtzeit auslesen.
         </p>
       </div>
 
@@ -306,7 +307,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card1_title">Automatisches ORD / DXF Auslesen</h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card1_desc">
-            Erkennt automatisch die aktuell in OMAX MAKE geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) aus.
+            Erkennt automatisch die geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) fehlerfrei aus.
           </p>
         </div>
 
@@ -316,7 +317,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card2_title">Exakte Maschinenkosten</h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card2_desc">
-            Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den OMAX-Präferenzen ohne Tippfehler.
+            Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den Schnittdaten-Präferenzen ohne manuelle Tippfehler.
           </p>
         </div>
 
@@ -326,7 +327,7 @@
           </div>
           <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card3_title">1-Klick Text & Zwischenablage</h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card3_desc">
-            Kopiert formatierte Angebots-Positionen (wahlweise ausführlich oder kompakt) direkt in die Zwischenablage für E-Mail, Word oder ERP.
+            Kopiert formatierte Angebotspositionen (ausführlich oder kompakt) direkt in die Zwischenablage für Ihr ERP-System, E-Mail oder Word.
           </p>
         </div>
       </div>
@@ -359,7 +360,7 @@
               <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n="comp_r1_pro">Unter 5 Sekunden</td>
             </tr>
             <tr>
-              <td class="p-4 font-medium" data-i18n="comp_r2_feat">OMAX® Live-Sync</td>
+              <td class="p-4 font-medium" data-i18n="comp_r2_feat">Schnittdaten-Sync (OMAX®-kompatibel)</td>
               <td class="p-4 text-rose-400" data-i18n-html="comp_r2_excel"><i class="fa-solid fa-xmark"></i> Nicht vorhanden</td>
               <td class="p-4 text-rose-400" data-i18n-html="comp_r2_erp"><i class="fa-solid fa-xmark"></i> Teure Schnittstelle</td>
               <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n-html="comp_r2_pro"><i class="fa-solid fa-check"></i> Voll integriert</td>
@@ -368,19 +369,19 @@
               <td class="p-4 font-medium" data-i18n="comp_r3_feat">Einarbeitungszeit</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r3_excel">Komplizierte Formeln</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r3_erp">Mehrtägige Schulung</td>
-              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n="comp_r3_pro">Sofort intuitiv (0 Min.)</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20">Sofort intuitiv (0 Min.)</td>
             </tr>
             <tr>
-              <td class="p-4 font-medium" data-i18n="comp_r4_feat">Datenschutz & Standort</td>
+              <td class="p-4 font-medium" data-i18n="comp_r4_feat">Datenschutz & Datenhaltung</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r4_excel">Lokal</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r4_erp">Oft Fremd-Cloud</td>
-              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n="comp_r4_pro">100% Offline-First</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20">100% Offline-First</td>
             </tr>
             <tr>
-              <td class="p-4 font-medium" data-i18n="comp_r5_feat">Preis / Lizenz</td>
-              <td class="p-4 text-slate-400" data-i18n="comp_r5_excel">Excel-Abo</td>
+              <td class="p-4 font-medium" data-i18n="comp_r5_feat">Preis / Lizenzmodell</td>
+              <td class="p-4 text-slate-400" data-i18n="comp_r5_excel">Office-Abonnement</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r5_erp">5.000 € – 25.000 € + Mtl.</td>
-              <td class="p-4 font-bold text-cyan-400 bg-cyan-950/20" data-i18n="comp_r5_pro">Faire Einmallizenz</td>
+              <td class="p-4 font-bold text-cyan-400 bg-cyan-950/20">Faire Einmallizenz</td>
             </tr>
           </tbody>
         </table>
@@ -395,7 +396,7 @@
         <div class="text-center mb-8">
           <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="form_badge">Kostenlose Testversion</span>
           <h2 class="text-3xl font-bold text-white mt-2" data-i18n="form_title">Blechkalkulator Pro für deinen Betrieb</h2>
-          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Angebot an.</p>
+          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.</p>
         </div>
 
         <form onsubmit="handleFormSubmit(event)" class="space-y-4">
@@ -421,10 +422,11 @@
             </div>
           </div>
 
+          <!-- GDPR Compliant Checkbox & Notice -->
           <div class="flex items-start gap-2 pt-2">
             <input type="checkbox" required id="privacy-check" class="mt-1 rounded bg-slate-950 border-slate-800 text-cyan-600 focus:ring-0">
             <label for="privacy-check" class="text-xs text-slate-400" data-i18n-html="form_privacy_consent">
-              Ich stimme zu, dass meine Kontaktdaten zur Bereitstellung der Testversion verarbeitet werden. Details siehe <button type="button" onclick="openModal('privacy-modal')" class="text-cyan-400 hover:underline">Datenschutzerklärung</button>.
+              Mit dem Absenden erkläre ich mich mit der Verarbeitung meiner angegebenen Daten zur Bearbeitung der Anfrage gemäß der <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Datenschutzerklärung</a> einverstanden. Die Einwilligung kann jederzeit per E-Mail an Buchhalterio@web.de widerrufen werden.
             </label>
           </div>
 
@@ -440,64 +442,38 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer with Legal Disclaimer and Direct Links -->
   <footer class="border-t border-slate-800 bg-slate-950 py-12 text-slate-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-        <div class="w-6 h-6 rounded-lg bg-cyan-600 flex items-center justify-center text-white font-bold text-xs">
-          <i class="fa-solid fa-bolt"></i>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <!-- Trademark & Liability Disclaimer Box -->
+      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-400 leading-relaxed text-center sm:text-left space-y-2">
+        <div class="flex items-center gap-2 font-bold text-slate-300 text-xs justify-center sm:justify-start">
+          <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+          <span>Rechtlicher Hinweis & Marken-Disclaimer:</span>
         </div>
-        <span class="font-bold text-white text-sm">Blechkalkulator Pro</span>
-        <span data-i18n="footer_rights">© 2026 Alle Rechte vorbehalten.</span>
+        <p class="text-[11px] text-slate-500" data-i18n="footer_disclaimer">
+          OMAX®, MAKE®, LAYOUT® und IntelliMAX® sind eingetragene Warenzeichen der jeweiligen Rechteinhaber (OMAX Corporation / Hypertherm Associates). Die Software Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner geschäftlichen Verbindung, Partnerschaft oder Billigung durch die OMAX Corporation. Nennungen von OMAX-Systemen dienen ausschließlich der sachbezogenen Angabe von Schnittstellen- und Formatkompatibilitäten.
+        </p>
       </div>
-      <div class="flex items-center gap-6">
-        <button onclick="openModal('imprint-modal')" class="hover:text-white transition" data-i18n="footer_imprint">Impressum</button>
-        <button onclick="openModal('privacy-modal')" class="hover:text-white transition" data-i18n="footer_privacy">Datenschutz</button>
-        <button onclick="openModal('eula-modal')" class="hover:text-white transition" data-i18n="footer_eula">Lizenzbedingungen (EULA)</button>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-2">
+        <div class="flex items-center gap-3">
+          <div class="w-6 h-6 rounded-lg bg-cyan-600 flex items-center justify-center text-white font-bold text-xs">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <span class="font-bold text-white text-sm">Blechkalkulator Pro</span>
+          <span data-i18n="footer_rights">© 2026 Cedric Müllers. Alle Rechte vorbehalten.</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="impressum.html" class="hover:text-white transition" data-i18n="footer_imprint">Impressum</a>
+          <a href="datenschutz.html" class="hover:text-white transition" data-i18n="footer_privacy">Datenschutz</a>
+          <a href="agb.html" class="hover:text-white transition" data-i18n="footer_eula">AGB / Lizenzbedingungen</a>
+        </div>
       </div>
+
     </div>
   </footer>
-
-  <!-- Modals for Legal Pages -->
-  <div id="imprint-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
-        <h3 class="text-lg font-bold text-white" data-i18n="imprint_title">Impressum / Legal Notice</h3>
-        <button onclick="closeModal('imprint-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
-      </div>
-      <div class="text-slate-300 text-sm space-y-4" data-i18n-html="imprint_content">
-        <p><strong>Angaben gemäß § 5 DDG:</strong><br>[Dein Name / Firmenname]<br>[Straße & Hausnummer]<br>[PLZ Ort, Deutschland]</p>
-        <p><strong>Kontakt:</strong><br>Telefon: [Deine Telefonnummer]<br>E-Mail: [Deine E-Mail-Adresse]</p>
-        <p><strong>Umsatzsteuer:</strong><br>USt-IdNr. oder Kleinunternehmerstatus gem. § 19 UStG</p>
-        <p class="text-xs text-slate-500">Hinweis: OMAX® und MAKE® sind eingetragene Warenzeichen der OMAX Corporation. Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner direkten gesellschaftsrechtlichen Verbindung zur OMAX Corporation.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="privacy-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
-        <h3 class="text-lg font-bold text-white" data-i18n="privacy_title">Datenschutzerklärung / Privacy Policy</h3>
-        <button onclick="closeModal('privacy-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
-      </div>
-      <div class="text-slate-300 text-sm space-y-4" data-i18n-html="privacy_content">
-        <p><strong>1. Lokale Datenverarbeitung:</strong> Blechkalkulator Pro arbeitet als reine Desktop-Software offline. CAD-Dateien, Kundenpreise und Kalkulationen verbleiben vollständig auf Ihrem Rechner.</p>
-        <p><strong>2. Website-Kontaktanfragen:</strong> Daten, die Sie über das Testversions-Formular eingeben, werden ausschließlich zur Kontaktaufnahme und Lizenzbereitstellung genutzt.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="eula-modal" class="modal fixed inset-0 z-50 items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 max-w-2xl w-full rounded-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl">
-      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
-        <h3 class="text-lg font-bold text-white" data-i18n="eula_title">Lizenzbedingungen (EULA)</h3>
-        <button onclick="closeModal('eula-modal')" class="text-slate-400 hover:text-white text-xl">&times;</button>
-      </div>
-      <div class="text-slate-300 text-sm space-y-4" data-i18n-html="eula_content">
-        <p>Die Software wird als Lizenz zur Nutzung auf Windows-basierten Arbeitsplatzrechnern bereitgestellt. Das Reverse-Engineering sowie die unautorisierte Weiterverbreitung sind untersagt.</p>
-      </div>
-    </div>
-  </div>
 
   <!-- Multilingual Dictionary & Client Script -->
   <script>
@@ -505,48 +481,49 @@
       de: {
         nav_features: "Funktionen",
         nav_screenshots: "Live-Einblicke",
-        nav_omax: "OMAX® Live-Sync",
+        nav_omax: "OMAX®-Kompatibilität",
         nav_comparison: "Vorteile",
         nav_cta: "Kostenlos testen",
-        hero_badge: "Echtzeit-Kopplung mit OMAX® MAKE & DXF-Dateien",
+        hero_badge: "Automatische Schnittdaten-Übernahme (kompatibel mit OMAX® MAKE & DXF)",
         hero_title: 'Wasserstrahl-Angebote in <br class="hidden sm:inline"><span class="gradient-text">5 Sekunden statt 15 Minuten.</span>',
-        hero_subtitle: "Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% exakte OMAX® Maschinenzeit-Übernahme und 1-Klick-Angebotstexte für dein ERP oder E-Mail.",
-        hero_cta_primary: '<i class="fa-solid fa-download text-lg"></i> <span>Demo & Preisangebot anfordern</span>',
-        hero_cta_secondary: '<i class="fa-solid fa-play text-xs text-cyan-400"></i> <span>Software-Screenshots ansehen</span>',
-        hero_app_title: "Blechkalkulator Pro v1.0 [OMAX® Live Connected]",
-        hero_sync_badge: '<i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync aktiv',
+        hero_subtitle: "Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% präzise Schnittzeiterfassung und 1-Klick-Angebotstexte für dein ERP oder E-Mail.",
+        hero_cta_primary: "Demo & Preisangebot anfordern",
+        hero_cta_secondary: "Software-Screenshots ansehen",
+        hero_app_title: "Blechkalkulator Pro v1.0 [Schnittdaten-Sync aktiv]",
+        hero_sync_badge: "Auto-Sync aktiv",
         stat_1_val: "5 Sek.",
         stat_1_lbl: "Kalkulationsdauer pro Teil",
-        stat_2_lbl: "OMAX® MAKE Genauigkeit",
-        stat_3_lbl: "Cloud-Zwang (Offline-First)",
+        stat_2_lbl: "Präzise Maschinenzeit-Übernahme",
+        stat_3_lbl: "Cloud-Zwang (100% Offline-First)",
         stat_4_val: "2 Klicks",
         stat_4_lbl: "Fertiger Angebotstext kopiert",
         section_live_badge: "Live aus der Praxis",
         section_live_title: "Übersichtlich, kraftvoll und auf das Wesentliche reduziert",
         section_live_subtitle: "Keine verschachtelten Menüs oder tagelange Schulungen. Ein einziger Bildschirm führt dich vom DXF-File zum fertigen Angebotspreis.",
         feat1_badge: "Modul 1: Live-Kalkulation",
-        feat1_title: "Präzise Preisfindung mit OMAX® Pfad- & Rohblech-Erkennung",
-        feat1_desc: "Blechkalkulator Pro erfasst millimetergenau den realen OMAX® Fahrbereich (inklusive Tool-Offset und Einstichfahnen) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.",
+        feat1_title: "Präzise Preisfindung mit Pfad- & Rohblech-Erkennung",
+        feat1_desc: "Blechkalkulator Pro erfasst millimetergenau den realen Werkzeugbahn-Fahrbereich (inklusive Tool-Offset und Einstichfahnen kompatibler CNC-/Wasserstrahl-Dateien) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.",
         feat1_point1: "<strong>Getrennte Ausweisung:</strong> Material-Rohblechpreis und Wasserstrahl-Schnittkosten separat im Blick.",
         feat1_point2: "<strong>Schnell-Randzuschläge:</strong> 1-Klick-Chips für +5 mm, +10 mm, +15 mm oder +20 mm Verschnitt.",
         feat1_point3: "<strong>Flexible Gewinnmargen:</strong> Proportionale Aufschläge per Knopfdruck oder Freitext.",
-        feat1_point4: "<strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kunden.",
+        feat1_point4: "<strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kundenangebote.",
         feat1_link: 'Kostenlose Testversion anfragen <i class="fa-solid fa-arrow-right text-xs"></i>',
         feat2_badge: "Modul 2: Werkstoff- & Preisdatenbank",
         feat2_title: "Eigene Werkstoffe, Dichten & Stärkepreise blitzschnell pflegen",
-        feat2_desc: "Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, OMAX-Zerspanbarkeitswerten und individuellen Kilopreisen pro Blechstärke.",
+        feat2_desc: "Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, Schnittkennwerten und individuellen Kilopreisen pro Blechstärke.",
         feat2_point1: "<strong>Schnellsuche:</strong> Live-Filterung nach Werkstoffnamen, Legierungen oder Werkstoffnummern.",
         feat2_point2: "<strong>Inline-Preispflege:</strong> Preise direkt in der Tabelle anpassen und per Klick speichern.",
         feat2_point3: "<strong>100% Offline-Gesichert:</strong> Lokale Datenspeicherung – deine sensiblen Einkaufspreise verlassen niemals deinen PC.",
         feat2_link: 'Unverbindlich ausprobieren <i class="fa-solid fa-arrow-right text-xs"></i>',
-        omax_sec_title: "Die einzige Software mit nativer OMAX® Hintergrund-Kopplung",
-        omax_sec_subtitle: "Sobald der Bediener in OMAX MAKE ein Teil lädt oder den Maschinensatz anpasst, übernimmt Blechkalkulator Pro die Daten im Hintergrund in Echtzeit.",
+        omax_badge: "Schnittdaten-Live-Bridge",
+        omax_sec_title: "Schnittstellen-Erfassung kompatibel mit OMAX® MAKE",
+        omax_sec_subtitle: "Sobald in OMAX MAKE ein Teil geladen oder der Maschinensatz angepasst wird, kann Blechkalkulator Pro die Schnittdaten im Hintergrund in Echtzeit auslesen.",
         omax_card1_title: "Automatisches ORD / DXF Auslesen",
-        omax_card1_desc: "Erkennt automatisch die aktuell in OMAX MAKE geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) aus.",
+        omax_card1_desc: "Erkennt automatisch die geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) fehlerfrei aus.",
         omax_card2_title: "Exakte Maschinenkosten",
-        omax_card2_desc: "Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den OMAX-Präferenzen ohne Tippfehler.",
+        omax_card2_desc: "Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den Schnittdaten-Präferenzen ohne manuelle Tippfehler.",
         omax_card3_title: "1-Klick Text & Zwischenablage",
-        omax_card3_desc: "Kopiert formatierte Angebots-Positionen (wahlweise ausführlich oder kompakt) direkt in die Zwischenablage für E-Mail, Word oder ERP.",
+        omax_card3_desc: "Kopiert formatierte Angebotspositionen (ausführlich oder kompakt) direkt in die Zwischenablage für Ihr ERP-System, E-Mail oder Word.",
         comp_title: "Warum Lohnfertiger umsteigen",
         comp_subtitle: "Ein ehrlicher Vergleich mit klassischen Tabellenkalkulationen und komplexen ERP-Systemen.",
         comp_th_feat: "Funktion",
@@ -556,7 +533,7 @@
         comp_r1_excel: "10 – 15 Minuten",
         comp_r1_erp: "5 – 10 Minuten",
         comp_r1_pro: "Unter 5 Sekunden",
-        comp_r2_feat: "OMAX® Live-Sync",
+        comp_r2_feat: "Schnittdaten-Sync (OMAX®-kompatibel)",
         comp_r2_excel: '<i class="fa-solid fa-xmark"></i> Nicht vorhanden',
         comp_r2_erp: '<i class="fa-solid fa-xmark"></i> Teure Schnittstelle',
         comp_r2_pro: '<i class="fa-solid fa-check"></i> Voll integriert',
@@ -564,60 +541,55 @@
         comp_r3_excel: "Komplizierte Formeln",
         comp_r3_erp: "Mehrtägige Schulung",
         comp_r3_pro: "Sofort intuitiv (0 Min.)",
-        comp_r4_feat: "Datenschutz & Standort",
+        comp_r4_feat: "Datenschutz & Datenhaltung",
         comp_r4_excel: "Lokal",
         comp_r4_erp: "Oft Fremd-Cloud",
         comp_r4_pro: "100% Offline-First",
-        comp_r5_feat: "Preis / Lizenz",
-        comp_r5_excel: "Excel-Abo",
+        comp_r5_feat: "Preis / Lizenzmodell",
+        comp_r5_excel: "Office-Abonnement",
         comp_r5_erp: "5.000 € – 25.000 € + Mtl.",
         comp_r5_pro: "Faire Einmallizenz",
         form_badge: "Kostenlose Testversion",
         form_title: "Blechkalkulator Pro für deinen Betrieb",
-        form_subtitle: "Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Angebot an.",
+        form_subtitle: "Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.",
         form_lbl_name: "Ansprechpartner / Name *",
         form_lbl_email: "Geschäftliche E-Mail-Adresse *",
         form_lbl_company: "Firma / Unternehmen",
         form_lbl_machine: "Maschine / CAD-System (optional)",
-        form_privacy_consent: 'Ich stimme zu, dass meine Kontaktdaten zur Bereitstellung der Testversion verarbeitet werden. Details siehe <button type="button" onclick="openModal(\'privacy-modal\')" class="text-cyan-400 hover:underline">Datenschutzerklärung</button>.',
+        form_privacy_consent: 'Mit dem Absenden erkläre ich mich mit der Verarbeitung meiner angegebenen Daten zur Bearbeitung der Anfrage gemäß der <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Datenschutzerklärung</a> einverstanden. Die Einwilligung kann jederzeit per E-Mail an Buchhalterio@web.de widerrufen werden.',
         form_btn_submit: "Kostenlose Testversion & Download anfordern",
         form_success_msg: "✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir den Download-Link in Kürze per E-Mail zu.",
-        footer_rights: "© 2026 Alle Rechte vorbehalten.",
+        footer_rights: "© 2026 Cedric Müllers. Alle Rechte vorbehalten.",
         footer_imprint: "Impressum",
         footer_privacy: "Datenschutz",
-        footer_eula: "Lizenzbedingungen (EULA)",
-        imprint_title: "Impressum",
-        imprint_content: '<p><strong>Angaben gemäß § 5 DDG:</strong><br>[Dein Name / Firmenname]<br>[Straße & Hausnummer]<br>[PLZ Ort, Deutschland]</p><p><strong>Kontakt:</strong><br>Telefon: [Deine Telefonnummer]<br>E-Mail: [Deine E-Mail-Adresse]</p><p><strong>Umsatzsteuer:</strong><br>USt-IdNr. oder Kleinunternehmerstatus gem. § 19 UStG</p><p class="text-xs text-slate-500">Hinweis: OMAX® und MAKE® sind eingetragene Warenzeichen der OMAX Corporation. Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner direkten gesellschaftsrechtlichen Verbindung zur OMAX Corporation.</p>',
-        privacy_title: "Datenschutzerklärung",
-        privacy_content: '<p><strong>1. Lokale Datenverarbeitung:</strong> Blechkalkulator Pro arbeitet als reine Desktop-Software offline. CAD-Dateien, Kundenpreise und Kalkulationen verbleiben vollständig auf Ihrem Rechner.</p><p><strong>2. Website-Kontaktanfragen:</strong> Daten, die Sie über das Testversions-Formular eingeben, werden ausschließlich zur Kontaktaufnahme und Lizenzbereitstellung genutzt.</p>',
-        eula_title: "Lizenzbedingungen (EULA)",
-        eula_content: '<p>Die Software wird als Lizenz zur Nutzung auf Windows-basierten Arbeitsplatzrechnern bereitgestellt. Das Reverse-Engineering sowie die unautorisierte Weiterverbreitung sind untersagt.</p>'
+        footer_eula: "AGB / Lizenzbedingungen",
+        footer_disclaimer: "OMAX®, MAKE®, LAYOUT® und IntelliMAX® sind eingetragene Warenzeichen der jeweiligen Rechteinhaber (OMAX Corporation / Hypertherm Associates). Die Software Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner geschäftlichen Verbindung, Partnerschaft oder Billigung durch die OMAX Corporation. Nennungen von OMAX-Systemen dienen ausschließlich der sachbezogenen Angabe von Schnittstellen- und Formatkompatibilitäten."
       },
       en: {
         nav_features: "Features",
         nav_screenshots: "Live Preview",
-        nav_omax: "OMAX® Live Sync",
+        nav_omax: "OMAX® Compatibility",
         nav_comparison: "Advantages",
         nav_cta: "Free Trial",
-        hero_badge: "Real-Time Sync with OMAX® MAKE & DXF Files",
+        hero_badge: "Automatic Cutting Data Import (Compatible with OMAX® MAKE & DXF)",
         hero_title: 'Waterjet Quotations in <br class="hidden sm:inline"><span class="gradient-text">5 Seconds instead of 15 Minutes.</span>',
-        hero_subtitle: "The ultra-fast desktop solution for job shops & waterjet cutters. Automatic DXF path envelope detection, 100% exact OMAX® machine time import, and 1-click quote exports for ERP or email.",
-        hero_cta_primary: '<i class="fa-solid fa-download text-lg"></i> <span>Request Demo & Pricing</span>',
-        hero_cta_secondary: '<i class="fa-solid fa-play text-xs text-cyan-400"></i> <span>View Software Screenshots</span>',
-        hero_app_title: "Blechkalkulator Pro v1.0 [OMAX® Live Connected]",
-        hero_sync_badge: '<i class="fa-solid fa-check-circle mr-1"></i> Auto-Sync active',
+        hero_subtitle: "The ultra-fast desktop solution for job shops & waterjet cutters. Automatic DXF path detection, 100% accurate cut time import, and 1-click quote exports for ERP or email.",
+        hero_cta_primary: "Request Demo & Pricing",
+        hero_cta_secondary: "View Software Screenshots",
+        hero_app_title: "Blechkalkulator Pro v1.0 [Cutting Data Sync Active]",
+        hero_sync_badge: "Auto-Sync active",
         stat_1_val: "5 Sec.",
         stat_1_lbl: "Quoting time per part",
-        stat_2_lbl: "OMAX® MAKE Precision",
-        stat_3_lbl: "No Cloud Required (Offline-First)",
+        stat_2_lbl: "Accurate Machine Time Import",
+        stat_3_lbl: "No Cloud Required (100% Offline-First)",
         stat_4_val: "2 Clicks",
         stat_4_lbl: "Full quotation copied",
         section_live_badge: "Live Product Tour",
         section_live_title: "Clean, powerful, and focused on speed",
         section_live_subtitle: "No cluttered menus or weeks of training. A single high-speed screen leads you directly from the DXF drawing to the final customer price.",
         feat1_badge: "Module 1: Live Calculation",
-        feat1_title: "Accurate Pricing with OMAX® Path & Raw Sheet Envelope",
-        feat1_desc: "Blechkalkulator Pro detects the exact OMAX® toolpath envelope (including tool offsets and lead-in travel) and calculates optimal sheet margins automatically.",
+        feat1_title: "Accurate Pricing with Toolpath & Sheet Envelope Detection",
+        feat1_desc: "Blechkalkulator Pro accurately detects toolpath boundaries (including tool offsets and lead-in travel from compatible waterjet files) and calculates optimal sheet margins automatically.",
         feat1_point1: "<strong>Split Breakdown:</strong> Sheet raw material cost and waterjet cutting cost tracked separately.",
         feat1_point2: "<strong>Quick Margin Presets:</strong> 1-click chips for +5 mm, +10 mm, +15 mm, or +20 mm sheet allowance.",
         feat1_point3: "<strong>Flexible Margins:</strong> Proportional markups per preset chip or custom percentage.",
@@ -625,17 +597,18 @@
         feat1_link: 'Request free trial version <i class="fa-solid fa-arrow-right text-xs"></i>',
         feat2_badge: "Module 2: Materials & Pricing Database",
         feat2_title: "Manage Custom Materials, Densities & Sheet Prices in Seconds",
-        feat2_desc: "Configure all metals (Mild Steel, Stainless 304/316, Alu, Copper, Brass, Titanium) with specific densities, OMAX machinability indices, and prices per sheet thickness.",
+        feat2_desc: "Configure all metals (Mild Steel, Stainless 304/316, Alu, Copper, Brass, Titanium) with specific densities, cutting indices, and prices per sheet thickness.",
         feat2_point1: "<strong>Instant Search:</strong> Live filter by material name, alloy code, or DIN standards.",
         feat2_point2: "<strong>Inline Price Editing:</strong> Update sheet prices directly in the table with 1 click.",
         feat2_point3: "<strong>100% Offline-Secured:</strong> Local data storage — sensitive purchasing rates never leave your PC.",
         feat2_link: 'Try free trial version <i class="fa-solid fa-arrow-right text-xs"></i>',
-        omax_sec_title: "The Only Software with Native OMAX® Background Bridge",
-        omax_sec_subtitle: "As soon as the operator loads a part or updates the hourly rate in OMAX MAKE, Blechkalkulator Pro syncs the calculation in real time.",
+        omax_badge: "Cutting Data Live Bridge",
+        omax_sec_title: "Cutting Data Integration Compatible with OMAX® MAKE",
+        omax_sec_subtitle: "When a drawing is loaded or hourly rates are modified in OMAX MAKE, Blechkalkulator Pro can extract cutting parameters seamlessly in the background.",
         omax_card1_title: "Automatic ORD / DXF Extraction",
-        omax_card1_desc: "Automatically detects active drawings in OMAX MAKE, extracting total cut length, pierces, and quality levels (Q1–Q5).",
+        omax_card1_desc: "Automatically extracts cut lengths, pierces, and quality levels (Q1–Q5) with zero typing errors.",
         omax_card2_title: "Exact Machine Costing",
-        omax_card2_desc: "Extracts actual machine hourly rates and calculated cut times directly from OMAX preferences without typing errors.",
+        omax_card2_desc: "Extracts actual machine hourly rates and calculated cut times directly from cutting data preferences.",
         omax_card3_title: "1-Click Text & Clipboard",
         omax_card3_desc: "Copies formatted quote breakdowns (long quotation or compact text) directly into your clipboard for ERP, email, or Word.",
         comp_title: "Why Job Shops Switch",
@@ -647,7 +620,7 @@
         comp_r1_excel: "10 – 15 Minutes",
         comp_r1_erp: "5 – 10 Minutes",
         comp_r1_pro: "Under 5 Seconds",
-        comp_r2_feat: "OMAX® Live Sync",
+        comp_r2_feat: "Cutting Data Sync (OMAX®-Compatible)",
         comp_r2_excel: '<i class="fa-solid fa-xmark"></i> Not Available',
         comp_r2_erp: '<i class="fa-solid fa-xmark"></i> Expensive Add-on',
         comp_r2_pro: '<i class="fa-solid fa-check"></i> Fully Integrated',
@@ -660,7 +633,7 @@
         comp_r4_erp: "Often Third-Party Cloud",
         comp_r4_pro: "100% Offline-First",
         comp_r5_feat: "Pricing & Licensing",
-        comp_r5_excel: "Monthly Subscriptions",
+        comp_r5_excel: "Office Subscriptions",
         comp_r5_erp: "$5,000 – $25,000 + Maint.",
         comp_r5_pro: "Fair Lifetime License",
         form_badge: "Free 14-Day Trial",
@@ -670,19 +643,14 @@
         form_lbl_email: "Business Email Address *",
         form_lbl_company: "Company Name",
         form_lbl_machine: "Waterjet Machine / CAD (optional)",
-        form_privacy_consent: 'I agree that my contact details will be processed to provide the trial version. Details in our <button type="button" onclick="openModal(\'privacy-modal\')" class="text-cyan-400 hover:underline">Privacy Policy</button>.',
+        form_privacy_consent: 'By submitting, I agree to the processing of my contact data in accordance with the <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Privacy Policy</a>. Consent can be revoked at any time via email to Buchhalterio@web.de.',
         form_btn_submit: "Request Free Trial & Download Link",
         form_success_msg: "✓ Thank you! We received your request and will send you the installer download link shortly.",
-        footer_rights: "© 2026 All rights reserved.",
+        footer_rights: "© 2026 Cedric Müllers. All rights reserved.",
         footer_imprint: "Legal Notice",
         footer_privacy: "Privacy Policy",
-        footer_eula: "Terms & EULA",
-        imprint_title: "Legal Notice / Impressum",
-        imprint_content: '<p><strong>Information according to § 5 DDG:</strong><br>[Your Name / Company Name]<br>[Street & Number]<br>[Postal Code, City, Country]</p><p><strong>Contact:</strong><br>Phone: [Your Phone Number]<br>Email: [Your Email Address]</p><p class="text-xs text-slate-500">Notice: OMAX® and MAKE® are registered trademarks of OMAX Corporation. Blechkalkulator Pro is an independent third-party product and is not affiliated with OMAX Corporation.</p>',
-        privacy_title: "Privacy Policy",
-        privacy_content: '<p><strong>1. Local Data Processing:</strong> Blechkalkulator Pro operates as an offline desktop application. CAD files, customer prices, and quotes remain solely on your local computer.</p><p><strong>2. Website Inquiries:</strong> Contact information entered in the demo form is used strictly to provide trial licenses and customer support.</p>',
-        eula_title: "License Agreement (EULA)",
-        eula_content: '<p>The software is provided as a licensed executable for Windows workstations. Reverse-engineering and unauthorized redistribution are strictly prohibited.</p>'
+        footer_eula: "Terms & Licensing (EULA)",
+        footer_disclaimer: "OMAX®, MAKE®, LAYOUT®, and IntelliMAX® are registered trademarks of their respective owners (OMAX Corporation / Hypertherm Associates). Blechkalkulator Pro is an independent third-party product and has no official affiliation, sponsorship, or endorsement by OMAX Corporation. Mentions of OMAX systems are made solely to indicate technical file format and interface compatibility."
       }
     };
 
@@ -719,7 +687,7 @@
       const dict = I18N_DATA[lang];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.innerText = dict[key];
+        if (dict[key]) el.innerHTML = dict[key];
       });
 
       document.querySelectorAll('[data-i18n-html]').forEach(el => {
@@ -740,15 +708,6 @@
         document.getElementById('input-machine').placeholder = "z. B. OMAX 60120, MAXIEM, Sonstige";
       }
     }
-
-    function openModal(id) { document.getElementById(id).classList.add('active'); }
-    function closeModal(id) { document.getElementById(id).classList.remove('active'); }
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
-      }
-    });
 
     // Supabase / Webhook Lead Capture
     const SUPABASE_URL = 'https://gqmarabspmnadhamxjxi.supabase.co';
