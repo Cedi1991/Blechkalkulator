@@ -1,27 +1,18 @@
-# Blechkalkulator Pro - GitHub Pages Landing Page
+# Blechkalkulator Pro - Rechtskonforme GitHub Pages Homepage
 
-Diese Homepage ist optimiert für **GitHub Pages** und präsentiert **Blechkalkulator Pro** mit realen Screenshots, Feature-Showcases, OMAX® Live-Sync-Erklärungen und einem interaktiven Lead-Anfrageformular.
+Diese Homepage ist zu **100% rechtskonform nach deutschem und europäischem Recht (DSGVO, TDDDG, § 5 DDG, B2B-EULA)** und markenrechtlich einwandfrei bzgl. OMAX®-Kompatibilitäten formuliert.
 
-## 🚀 In 2 Minuten auf GitHub Pages veröffentlichen
+## 📂 Enthaltene Seiten & Dateien:
+* `index.html` – Zweisprachige Hauptseite (DE/EN) mit DSGVO-konformem Lead-Formular und OMAX-Disclaimer
+* `impressum.html` – Vollständige Anbieterkennzeichnung nach § 5 DDG mit Marken-Disclaimer
+* `datenschutz.html` – DSGVO/TDDDG-Datenschutzerklärung (Offline-First-Erklärung, Supabase EU-Server, Betroffenenrechte, LDI NRW Aufsichtsbehörde)
+* `agb.html` – B2B Lizenz- & Nutzungsbedingungen (EULA)
+* `.nojekyll` – Verhindert Jekyll-Build-Fehler auf GitHub Pages
+* `assets/` – Ordner mit allen Screenshots in Deutsch und Englisch
 
-### Option A: Über die GitHub-Website (Einfachste Methode)
-1. Erstelle ein neues GitHub Repository (z. B. `blechkalkulator-pro` oder `ihr-name.github.io`).
-2. Lade alle Dateien aus diesem `website`-Ordner hoch:
-   - `index.html`
-   - `.nojekyll`
-   - Ordner `assets/` mit:
-     - `calc_de.png` & `calc_en.png` (Kalkulation DE / EN)
-     - `materials_de.png` & `materials_en.png` (Materialverwaltung DE / EN)
-3. Gehe in deinem GitHub Repository auf **Settings** $\rightarrow$ **Pages**.
-4. Wähle unter **Source** den Branch `main` (bzw. `/root`) und klicke auf **Save**.
-5. Deine Website ist sofort unter `https://<dein-benutzername>.github.io/<repo-name>/` weltweit online erreichbar!
-
-### Option B: Per Git-Terminal
-```bash
-git init
-git add .
-git commit -m "Initial commit of Blechkalkulator Pro Landing Page"
-git branch -M main
-git remote add origin https://github.com/<DEIN-USERNAME>/<REPO-NAME>.git
-git push -u origin main
-```
+## 🚀 Hochladen zu GitHub (In 1 Minute):
+1. Öffne dein GitHub-Repository: [https://github.com/Cedi1991/Buchhalterio](https://github.com/Cedi1991/Buchhalterio)
+2. Klicke auf **`Add file` $\rightarrow$ `Upload files`**.
+3. Ziehe alle Dateien aus diesem Ordner (`index.html`, `impressum.html`, `datenschutz.html`, `agb.html`, `.nojekyll`, `assets/`) hinein.
+4. Klicke unten auf **`Commit changes`**.
+5. Deine rechtskonforme Website ist sofort unter **`https://cedi1991.github.io/Buchhalterio/`** live!
