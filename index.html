@@ -82,6 +82,7 @@
       </div>
       
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#video" data-i18n="nav_video" class="hover:text-white transition">Video</a>
         <a href="#features" data-i18n="nav_features" class="hover:text-white transition">Funktionen</a>
         <a href="#screenshots" data-i18n="nav_screenshots" class="hover:text-white transition">Live-Einblicke</a>
         <a href="#omax" data-i18n="nav_omax" class="hover:text-white transition">OMAX®-Kompatibilität</a>
@@ -124,8 +125,8 @@
         <span class="gradient-text">5 Sekunden statt 15 Minuten.</span>
       </h1>
       
-      <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">
-        Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% präzise Schnittzeiterfassung und 1-Klick-Angebotstexte für dein ERP oder E-Mail.
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal" data-i18n="hero_subtitle">
+        Die blitzschnelle Desktop-Lösung für Lohnfertiger & Wasserstrahlschneider. Automatische DXF-Pfaderkennung, 100% präzise Schneidzeit-Übernahme und 1-Klick-Angebote für ERP oder E-Mail.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -133,9 +134,9 @@
           <i class="fa-solid fa-download text-lg"></i>
           <span data-i18n="hero_cta_primary">Demo & Preisangebot anfordern</span>
         </a>
-        <a href="#screenshots" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
+        <a href="#video" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-play text-xs text-cyan-400"></i>
-          <span data-i18n="hero_cta_secondary">Software-Screenshots ansehen</span>
+          <span data-i18n="hero_cta_secondary">Produktvideo ansehen</span>
         </a>
       </div>
 
@@ -183,6 +184,46 @@
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1" data-i18n="stat_4_val">2 Klicks</div>
           <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_4_lbl">Fertiger Angebotstext kopiert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Showcase Section -->
+  <section id="video" class="py-20 bg-slate-900/60 border-b border-slate-800 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20" data-i18n="video_badge">⚡ Live-Demonstration</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-4 mb-3">
+          <span data-i18n="video_title_prefix">Blechkalkulator Pro</span> <span class="gradient-text" data-i18n="video_title_highlight">im Praxiseinsatz</span>
+        </h2>
+        <p class="text-slate-400 text-base" data-i18n="video_subtitle">
+          Sehen Sie in der Live-Aufzeichnung, wie Blechkalkulator Pro Zeichnungen, Werkstoffe, Pfadmaße und Schneidzeiten aus OMAX® MAKE in Sekundenschnelle synchronisiert.
+        </p>
+      </div>
+
+      <!-- Video Player Card -->
+      <div class="rounded-2xl border border-slate-700 bg-slate-900/80 p-2 sm:p-3 shadow-2xl backdrop-blur-xl glow-cyan">
+        <div class="flex items-center justify-between border-b border-slate-800 px-4 py-2.5 bg-slate-950/90 rounded-t-xl">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="video_player_title">Live-Workflow: OMAX MAKE & Blechkalkulator Pro</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+              <i class="fa-solid fa-play mr-1 text-[10px]"></i> 1080p HD
+            </span>
+          </div>
+        </div>
+        <div class="relative overflow-hidden rounded-b-xl bg-black" style="padding-bottom: 56.25%; height: 0;">
+          <iframe 
+            src="https://drive.google.com/file/d/1JFcd0iUHhk0Dy2xqePk5XIxV6DiW9E53/preview" 
+            class="absolute top-0 left-0 w-full h-full border-0 rounded-b-xl"
+            allow="autoplay; fullscreen" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </div>
@@ -479,6 +520,7 @@
   <script>
     const I18N_DATA = {
       de: {
+        nav_video: "Video",
         nav_features: "Funktionen",
         nav_screenshots: "Live-Einblicke",
         nav_omax: "OMAX®-Kompatibilität",
@@ -486,11 +528,16 @@
         nav_cta: "Kostenlos testen",
         hero_badge: "Automatische Schnittdaten-Übernahme (kompatibel mit OMAX® MAKE & DXF)",
         hero_title: 'Wasserstrahl-Angebote in <br class="hidden sm:inline"><span class="gradient-text">5 Sekunden statt 15 Minuten.</span>',
-        hero_subtitle: "Die blitzschnelle Desktop-Lösung für Wasserstrahlschneider & Blechbearbeiter. Automatische DXF-Pfaderkennung, 100% präzise Schnittzeiterfassung und 1-Klick-Angebotstexte für dein ERP oder E-Mail.",
+        hero_subtitle: "Die blitzschnelle Desktop-Lösung für Lohnfertiger & Wasserstrahlschneider. Automatische DXF-Pfaderkennung, 100% präzise Schneidzeit-Übernahme und 1-Klick-Angebote für ERP oder E-Mail.",
         hero_cta_primary: "Demo & Preisangebot anfordern",
-        hero_cta_secondary: "Software-Screenshots ansehen",
+        hero_cta_secondary: "Produktvideo ansehen",
         hero_app_title: "Blechkalkulator Pro v1.0 [Schnittdaten-Sync aktiv]",
         hero_sync_badge: "Auto-Sync aktiv",
+        video_badge: "⚡ Live-Demonstration",
+        video_title_prefix: "Blechkalkulator Pro",
+        video_title_highlight: "im Praxiseinsatz",
+        video_subtitle: "Sehen Sie in der Live-Aufzeichnung, wie Blechkalkulator Pro Zeichnungen, Werkstoffe, Pfadmaße und Schneidzeiten aus OMAX® MAKE in Sekundenschnelle synchronisiert.",
+        video_player_title: "Live-Workflow: OMAX MAKE & Blechkalkulator Pro",
         stat_1_val: "5 Sek.",
         stat_1_lbl: "Kalkulationsdauer pro Teil",
         stat_2_lbl: "Präzise Maschinenzeit-Übernahme",
@@ -566,6 +613,7 @@
         footer_disclaimer: "OMAX®, MAKE®, LAYOUT® und IntelliMAX® sind eingetragene Warenzeichen der jeweiligen Rechteinhaber (OMAX Corporation / Hypertherm Associates). Die Software Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner geschäftlichen Verbindung, Partnerschaft oder Billigung durch die OMAX Corporation. Nennungen von OMAX-Systemen dienen ausschließlich der sachbezogenen Angabe von Schnittstellen- und Formatkompatibilitäten."
       },
       en: {
+        nav_video: "Video",
         nav_features: "Features",
         nav_screenshots: "Live Preview",
         nav_omax: "OMAX® Compatibility",
@@ -575,9 +623,14 @@
         hero_title: 'Waterjet Quotations in <br class="hidden sm:inline"><span class="gradient-text">5 Seconds instead of 15 Minutes.</span>',
         hero_subtitle: "The ultra-fast desktop solution for job shops & waterjet cutters. Automatic DXF path detection, 100% accurate cut time import, and 1-click quote exports for ERP or email.",
         hero_cta_primary: "Request Demo & Pricing",
-        hero_cta_secondary: "View Software Screenshots",
+        hero_cta_secondary: "Watch Product Video",
         hero_app_title: "Blechkalkulator Pro v1.0 [Cutting Data Sync Active]",
         hero_sync_badge: "Auto-Sync active",
+        video_badge: "⚡ Live Demonstration",
+        video_title_prefix: "Blechkalkulator Pro",
+        video_title_highlight: "in Real-World Action",
+        video_subtitle: "Watch the live screen recording demonstrating real-time drawing sync, material properties, toolpaths, and cutting estimates from OMAX® MAKE.",
+        video_player_title: "Live Workflow: OMAX MAKE & Blechkalkulator Pro",
         stat_1_val: "5 Sec.",
         stat_1_lbl: "Quoting time per part",
         stat_2_lbl: "Accurate Machine Time Import",
