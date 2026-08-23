@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blechkalkulator Pro | Schnelle Wasserstrahl- & Blechzuschnitt-Kalkulation (OMAX®-kompatibel)</title>
-  <meta name="description" content="Blechkalkulator Pro - Die blitzschnelle Desktop-Software für Wasserstrahlschneider & Blechbearbeiter. Kompatibel mit OMAX® MAKE & DXF-Dateien für 1-Klick-Angebote.">
-  
+  <meta name="description"
+    content="Blechkalkulator Pro - Die blitzschnelle Desktop-Software für Wasserstrahlschneider & Blechbearbeiter. Kompatibel mit OMAX® MAKE & DXF-Dateien für 1-Klick-Angebote.">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -32,55 +34,69 @@
       }
     }
   </script>
-  
+
   <!-- FontAwesome Icons & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    code, pre {
+
+    code,
+    pre {
       font-family: 'JetBrains Mono', monospace;
     }
+
     .gradient-text {
       background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
     .glow-cyan {
       box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
     }
+
     .modal {
       display: none;
       background-color: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(8px);
     }
+
     .modal.active {
       display: flex;
     }
+
     .img-fade {
       transition: opacity 0.3s ease-in-out;
     }
   </style>
 </head>
+
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
 
   <!-- Header / Navigation -->
   <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20">
+        <div
+          class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20">
           <i class="fa-solid fa-bolt"></i>
         </div>
-        <span class="text-xl font-bold tracking-tight text-white">Blechkalkulator <span class="text-cyan-400">Pro</span></span>
-        <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">v1.0 Ready</span>
+        <span class="text-xl font-bold tracking-tight text-white">Blechkalkulator <span
+            class="text-cyan-400">Pro</span></span>
+        <span
+          class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">v1.0
+          Ready</span>
       </div>
-      
+
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#video" data-i18n="nav_video" class="hover:text-white transition">Video</a>
         <a href="#features" data-i18n="nav_features" class="hover:text-white transition">Funktionen</a>
@@ -91,16 +107,20 @@
 
       <div class="flex items-center gap-4">
         <!-- Language Switcher Button -->
-        <div class="relative inline-flex items-center bg-slate-900 border border-slate-800 rounded-lg p-1 text-xs font-semibold">
-          <button id="lang-de-btn" onclick="setLanguage('de')" class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400">
+        <div
+          class="relative inline-flex items-center bg-slate-900 border border-slate-800 rounded-lg p-1 text-xs font-semibold">
+          <button id="lang-de-btn" onclick="setLanguage('de')"
+            class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400">
             <span>🇩🇪</span> <span>DE</span>
           </button>
-          <button id="lang-en-btn" onclick="setLanguage('en')" class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 text-slate-400 hover:text-white">
+          <button id="lang-en-btn" onclick="setLanguage('en')"
+            class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 text-slate-400 hover:text-white">
             <span>🇬🇧</span> <span>EN</span>
           </button>
         </div>
 
-        <a href="#demo" data-i18n="nav_cta" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-600/20">
+        <a href="#demo" data-i18n="nav_cta"
+          class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-600/20">
           Kostenlos testen
         </a>
       </div>
@@ -111,55 +131,67 @@
   <section class="relative pt-24 pb-20 overflow-hidden">
     <div class="absolute inset-0 -z-10 flex items-center justify-center">
       <div class="w-[600px] h-[350px] bg-cyan-500/15 blur-[120px] rounded-full pointer-events-none"></div>
-      <div class="w-[400px] h-[250px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-20"></div>
+      <div class="w-[400px] h-[250px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none -translate-y-20">
+      </div>
     </div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 mb-8 shadow-inner">
+      <div
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300 mb-8 shadow-inner">
         <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
         <span data-i18n="hero_badge">Automatische Schnittdaten-Übernahme (kompatibel mit OMAX® MAKE & DXF)</span>
       </div>
-      
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight" data-i18n-html="hero_title">
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight"
+        data-i18n-html="hero_title">
         Wasserstrahl-Angebote in <br class="hidden sm:inline">
         <span class="gradient-text">5 Sekunden statt 15 Minuten.</span>
       </h1>
-      
-      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal" data-i18n="hero_subtitle">
-        Die blitzschnelle Desktop-Lösung für Lohnfertiger & Wasserstrahlschneider. Automatische DXF-Pfaderkennung, 100% präzise Schneidzeit-Übernahme und 1-Klick-Angebote für ERP oder E-Mail.
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal"
+        data-i18n="hero_subtitle">
+        Die blitzschnelle Desktop-Lösung für Lohnfertiger & Wasserstrahlschneider. Automatische DXF-Pfaderkennung, 100%
+        präzise Schneidzeit-Übernahme und 1-Klick-Angebote für ERP oder E-Mail.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#demo" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
+        <a href="#demo"
+          class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-semibold text-base transition shadow-xl shadow-cyan-600/30 flex items-center justify-center gap-3">
           <i class="fa-solid fa-download text-lg"></i>
           <span data-i18n="hero_cta_primary">Demo & Preisangebot anfordern</span>
         </a>
-        <a href="#video" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
+        <a href="#video"
+          class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold text-base transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-play text-xs text-cyan-400"></i>
           <span data-i18n="hero_cta_secondary">Produktvideo ansehen</span>
         </a>
       </div>
 
       <!-- App Hero Screenshot Frame (Dynamic Switch DE / EN) -->
-      <div class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-2 sm:p-3 shadow-2xl backdrop-blur-xl glow-cyan">
+      <div
+        class="mt-16 rounded-2xl border border-slate-800 bg-slate-900/60 p-2 sm:p-3 shadow-2xl backdrop-blur-xl glow-cyan">
         <div class="flex items-center justify-between border-b border-slate-800 px-4 py-3 bg-slate-950/80 rounded-t-xl">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="hero_app_title">Blechkalkulator Pro v1.0 [Schnittdaten-Sync aktiv]</span>
+            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="hero_app_title">Blechkalkulator Pro v1.0
+              [Schnittdaten-Sync aktiv]</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+            <span
+              class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
               <i class="fa-solid fa-check-circle mr-1"></i> <span data-i18n="hero_sync_badge">Auto-Sync aktiv</span>
             </span>
-            <span id="hero-lang-badge" class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
+            <span id="hero-lang-badge"
+              class="text-xs px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-mono">
               🇩🇪 DE
             </span>
           </div>
         </div>
         <div class="relative overflow-hidden rounded-b-xl bg-slate-950">
-          <img id="hero-img" src="assets/calc_de.png" alt="Blechkalkulator Pro Live Calculation" class="w-full h-auto object-cover rounded-b-xl border-t border-slate-900 img-fade">
+          <img id="hero-img" src="assets/calc_de.png" alt="Blechkalkulator Pro Live Calculation"
+            class="w-full h-auto object-cover rounded-b-xl border-t border-slate-900 img-fade">
         </div>
       </div>
     </div>
@@ -171,19 +203,23 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mb-1" data-i18n="stat_1_val">5 Sek.</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_1_lbl">Kalkulationsdauer pro Teil</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_1_lbl">Kalkulationsdauer pro Teil
+          </div>
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">100%</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_2_lbl">Präzise Maschinenzeit-Übernahme</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_2_lbl">Präzise
+            Maschinenzeit-Übernahme</div>
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 mb-1">0 €</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_3_lbl">Cloud-Zwang (100% Offline-First)</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_3_lbl">Cloud-Zwang (100%
+            Offline-First)</div>
         </div>
         <div class="p-4">
           <div class="text-3xl sm:text-4xl font-extrabold text-amber-400 mb-1" data-i18n="stat_4_val">2 Klicks</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_4_lbl">Fertiger Angebotstext kopiert</div>
+          <div class="text-xs sm:text-sm text-slate-400 font-medium" data-i18n="stat_4_lbl">Fertiger Angebotstext
+            kopiert</div>
         </div>
       </div>
     </div>
@@ -193,35 +229,40 @@
   <section id="video" class="py-20 bg-slate-900/60 border-b border-slate-800 relative overflow-hidden">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20" data-i18n="video_badge">⚡ Live-Demonstration</span>
+        <span
+          class="text-xs font-semibold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20"
+          data-i18n="video_badge">⚡ Live-Demonstration</span>
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-4 mb-3">
-          <span data-i18n="video_title_prefix">Blechkalkulator Pro</span> <span class="gradient-text" data-i18n="video_title_highlight">im Praxiseinsatz</span>
+          <span data-i18n="video_title_prefix">Blechkalkulator Pro</span> <span class="gradient-text"
+            data-i18n="video_title_highlight">im Praxiseinsatz</span>
         </h2>
         <p class="text-slate-400 text-base" data-i18n="video_subtitle">
-          Sehen Sie in der Live-Aufzeichnung, wie Blechkalkulator Pro Zeichnungen, Werkstoffe, Pfadmaße und Schneidzeiten aus OMAX® MAKE in Sekundenschnelle synchronisiert.
+          Sehen Sie in der Live-Aufzeichnung, wie Blechkalkulator Pro Zeichnungen, Werkstoffe, Pfadmaße und
+          Schneidzeiten aus OMAX® MAKE in Sekundenschnelle synchronisiert.
         </p>
       </div>
 
       <!-- Video Player Card -->
       <div class="rounded-2xl border border-slate-700 bg-slate-900/80 p-2 sm:p-3 shadow-2xl backdrop-blur-xl glow-cyan">
-        <div class="flex items-center justify-between border-b border-slate-800 px-4 py-2.5 bg-slate-950/90 rounded-t-xl">
+        <div
+          class="flex items-center justify-between border-b border-slate-800 px-4 py-2.5 bg-slate-950/90 rounded-t-xl">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
             <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="video_player_title">Live-Workflow: OMAX MAKE & Blechkalkulator Pro</span>
+            <span class="text-xs text-slate-400 ml-2 font-mono" data-i18n="video_player_title">Live-Workflow: OMAX MAKE
+              & Blechkalkulator Pro</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
+            <span
+              class="text-xs px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
               <i class="fa-solid fa-play mr-1 text-[10px]"></i> 1080p HD
             </span>
           </div>
         </div>
         <div class="relative overflow-hidden rounded-b-xl bg-black" style="padding-bottom: 56.25%; height: 0;">
-          <iframe 
-            src="https://drive.google.com/file/d/1JFcd0iUHhk0Dy2xqePk5XIxV6DiW9E53/preview" 
-            class="absolute top-0 left-0 w-full h-full border-0 rounded-b-xl"
-            allow="autoplay; fullscreen" 
+          <iframe src="https://drive.google.com/file/d/1JFcd0iUHhk0Dy2xqePk5XIxV6DiW9E53/preview"
+            class="absolute top-0 left-0 w-full h-full border-0 rounded-b-xl" allow="autoplay; fullscreen"
             allowfullscreen>
           </iframe>
         </div>
@@ -233,53 +274,74 @@
   <section id="screenshots" class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-20">
-        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="section_live_badge">Live aus der Praxis</span>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-2 mb-4" data-i18n="section_live_title">Übersichtlich, kraftvoll und auf das Wesentliche reduziert</h2>
-        <p class="text-slate-400 text-base" data-i18n="section_live_subtitle">Keine verschachtelten Menüs oder tagelange Schulungen. Ein einziger Bildschirm führt dich vom DXF-File zum fertigen Angebotspreis.</p>
+        <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="section_live_badge">Live
+          aus der Praxis</span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-2 mb-4" data-i18n="section_live_title">
+          Übersichtlich, kraftvoll und auf das Wesentliche reduziert</h2>
+        <p class="text-slate-400 text-base" data-i18n="section_live_subtitle">Keine verschachtelten Menüs oder tagelange
+          Schulungen. Ein einziger Bildschirm führt dich vom DXF-File zum fertigen Angebotspreis.</p>
       </div>
 
       <!-- Feature Showcase 1: Kalkulation -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
         <div class="lg:col-span-5 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold">
             <i class="fa-solid fa-calculator"></i> <span data-i18n="feat1_badge">Modul 1: Live-Kalkulation</span>
           </div>
           <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight" data-i18n="feat1_title">
             Präzise Preisfindung mit Pfad- & Rohblech-Erkennung
           </h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat1_desc">
-            Blechkalkulator Pro erfasst millimetergenau den realen Werkzeugbahn-Fahrbereich (inklusive Tool-Offset und Einstichfahnen kompatibler CNC-/Wasserstrahl-Dateien) und rechnet den optimalen Rohblech-Zuschnitt automatisch aus.
+            Blechkalkulator Pro erfasst millimetergenau den realen Werkzeugbahn-Fahrbereich (inklusive Tool-Offset und
+            Einstichfahnen kompatibler CNC-/Wasserstrahl-Dateien) und rechnet den optimalen Rohblech-Zuschnitt
+            automatisch aus.
           </p>
 
           <ul class="space-y-3 text-sm text-slate-300">
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat1_point1"><strong>Getrennte Ausweisung:</strong> Material-Rohblechpreis und Wasserstrahl-Schnittkosten separat im Blick.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat1_point1"><strong>Getrennte Ausweisung:</strong> Material-Rohblechpreis und
+                Wasserstrahl-Schnittkosten separat im Blick.</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat1_point2"><strong>Schnell-Randzuschläge:</strong> 1-Klick-Chips für +5 mm, +10 mm, +15 mm oder +20 mm Verschnitt.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat1_point2"><strong>Schnell-Randzuschläge:</strong> 1-Klick-Chips für +5 mm, +10
+                mm, +15 mm oder +20 mm Verschnitt.</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat1_point3"><strong>Flexible Gewinnmargen:</strong> Proportionale Aufschläge per Knopfdruck oder Freitext.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat1_point3"><strong>Flexible Gewinnmargen:</strong> Proportionale Aufschläge per
+                Knopfdruck oder Freitext.</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat1_point4"><strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für internationale Kundenangebote.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat1_point4"><strong>Zweisprachig (DE / EN):</strong> Blitzschnelle Umschaltung für
+                internationale Kundenangebote.</span>
             </li>
           </ul>
 
           <div class="pt-2">
-            <a href="#demo" data-i18n-html="feat1_link" class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm inline-flex items-center gap-2">
+            <a href="#demo" data-i18n-html="feat1_link"
+              class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm inline-flex items-center gap-2">
               Kostenlose Testversion anfragen <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-7">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
-            <img id="feat1-img" src="assets/calc_de.png" alt="Blechkalkulator Pro Preiskalkulation" class="w-full h-auto rounded-xl shadow-lg img-fade">
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
+            <img id="feat1-img" src="assets/calc_de.png" alt="Blechkalkulator Pro Preiskalkulation"
+              class="w-full h-auto rounded-xl shadow-lg img-fade">
           </div>
         </div>
       </div>
@@ -287,39 +349,53 @@
       <!-- Feature Showcase 2: Werkstoffe & Stärken -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <div class="lg:col-span-7 order-2 lg:order-1">
-          <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
-            <img id="feat2-img" src="assets/materials_de.png" alt="Blechkalkulator Pro Materialverwaltung" class="w-full h-auto rounded-xl shadow-lg img-fade">
+          <div
+            class="rounded-2xl border border-slate-800 bg-slate-900/80 p-2 shadow-2xl hover:border-slate-700 transition">
+            <img id="feat2-img" src="assets/materials_de.png" alt="Blechkalkulator Pro Materialverwaltung"
+              class="w-full h-auto rounded-xl shadow-lg img-fade">
           </div>
         </div>
 
         <div class="lg:col-span-5 space-y-6 order-1 lg:order-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
             <i class="fa-solid fa-cubes"></i> <span data-i18n="feat2_badge">Modul 2: Werkstoff- & Preisdatenbank</span>
           </div>
           <h3 class="text-2xl sm:text-3xl font-bold text-white leading-tight" data-i18n="feat2_title">
             Eigene Werkstoffe, Dichten & Stärkepreise blitzschnell pflegen
           </h3>
           <p class="text-slate-400 text-sm leading-relaxed" data-i18n="feat2_desc">
-            Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen Dichten, Schnittkennwerten und individuellen Kilopreisen pro Blechstärke.
+            Verwalte all deine Metalle (Baustahl, Edelstahl 304/316, Alu, Kupfer, Messing, Titan etc.) mit spezifischen
+            Dichten, Schnittkennwerten und individuellen Kilopreisen pro Blechstärke.
           </p>
 
           <ul class="space-y-3 text-sm text-slate-300">
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat2_point1"><strong>Schnellsuche:</strong> Live-Filterung nach Werkstoffnamen, Legierungen oder Werkstoffnummern.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat2_point1"><strong>Schnellsuche:</strong> Live-Filterung nach Werkstoffnamen,
+                Legierungen oder Werkstoffnummern.</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat2_point2"><strong>Inline-Preispflege:</strong> Preise direkt in der Tabelle anpassen und per Klick speichern.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat2_point2"><strong>Inline-Preispflege:</strong> Preise direkt in der Tabelle
+                anpassen und per Klick speichern.</span>
             </li>
             <li class="flex items-start gap-3">
-              <div class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5"><i class="fa-solid fa-check"></i></div>
-              <span data-i18n-html="feat2_point3"><strong>100% Offline-Gesichert:</strong> Lokale Datenspeicherung – deine sensiblen Einkaufspreise verlassen niemals deinen PC.</span>
+              <div
+                class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs mt-0.5">
+                <i class="fa-solid fa-check"></i></div>
+              <span data-i18n-html="feat2_point3"><strong>100% Offline-Gesichert:</strong> Lokale Datenspeicherung –
+                deine sensiblen Einkaufspreise verlassen niemals deinen PC.</span>
             </li>
           </ul>
 
           <div class="pt-2">
-            <a href="#demo" data-i18n-html="feat2_link" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm inline-flex items-center gap-2">
+            <a href="#demo" data-i18n-html="feat2_link"
+              class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm inline-flex items-center gap-2">
               Unverbindlich ausprobieren <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
           </div>
@@ -332,43 +408,53 @@
   <section id="omax" class="py-20 bg-slate-900/50 border-y border-slate-800 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold mb-4">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold mb-4">
           <i class="fa-solid fa-satellite-dish"></i> <span data-i18n="omax_badge">Schnittdaten-Live-Bridge</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="omax_sec_title">Schnittstellen-Erfassung kompatibel mit OMAX® MAKE</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="omax_sec_title">Schnittstellen-Erfassung
+          kompatibel mit OMAX® MAKE</h2>
         <p class="text-slate-400 text-sm sm:text-base" data-i18n="omax_sec_subtitle">
-          Sobald in OMAX MAKE ein Teil geladen oder der Maschinensatz angepasst wird, kann Blechkalkulator Pro die Schnittdaten im Hintergrund in Echtzeit auslesen.
+          Sobald in OMAX MAKE ein Teil geladen oder der Maschinensatz angepasst wird, kann Blechkalkulator Pro die
+          Schnittdaten im Hintergrund in Echtzeit auslesen.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center text-xl mb-4">
             <i class="fa-solid fa-file-waveform"></i>
           </div>
-          <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card1_title">Automatisches ORD / DXF Auslesen</h4>
+          <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card1_title">Automatisches ORD / DXF Auslesen
+          </h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card1_desc">
-            Erkennt automatisch die geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5) fehlerfrei aus.
+            Erkennt automatisch die geöffnete Zeichnung und liest Schnittlänge, Einstiche und Qualitätsstufen (Q1–Q5)
+            fehlerfrei aus.
           </p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-4">
             <i class="fa-solid fa-stopwatch"></i>
           </div>
           <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card2_title">Exakte Maschinenkosten</h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card2_desc">
-            Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den Schnittdaten-Präferenzen ohne manuelle Tippfehler.
+            Liest den tatsächlichen Maschinen-Stundensatz und die kalkulierte Schnittzeit direkt aus den
+            Schnittdaten-Präferenzen ohne manuelle Tippfehler.
           </p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-purple-500/40 transition">
-          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
+          <div
+            class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-4">
             <i class="fa-solid fa-copy"></i>
           </div>
           <h4 class="text-lg font-bold text-white mb-2" data-i18n="omax_card3_title">1-Klick Text & Zwischenablage</h4>
           <p class="text-sm text-slate-400 leading-relaxed" data-i18n="omax_card3_desc">
-            Kopiert formatierte Angebotspositionen (ausführlich oder kompakt) direkt in die Zwischenablage für Ihr ERP-System, E-Mail oder Word.
+            Kopiert formatierte Angebotspositionen (ausführlich oder kompakt) direkt in die Zwischenablage für Ihr
+            ERP-System, E-Mail oder Word.
           </p>
         </div>
       </div>
@@ -380,11 +466,13 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl font-bold text-white mb-4" data-i18n="comp_title">Warum Lohnfertiger umsteigen</h2>
-        <p class="text-slate-400 text-sm sm:text-base" data-i18n="comp_subtitle">Ein ehrlicher Vergleich mit klassischen Tabellenkalkulationen und komplexen ERP-Systemen.</p>
+        <p class="text-slate-400 text-sm sm:text-base" data-i18n="comp_subtitle">Ein ehrlicher Vergleich mit klassischen
+          Tabellenkalkulationen und komplexen ERP-Systemen.</p>
       </div>
 
       <div class="overflow-x-auto">
-        <table class="w-full border-collapse rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 text-sm text-left">
+        <table
+          class="w-full border-collapse rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/60 text-sm text-left">
           <thead>
             <tr class="border-b border-slate-800 bg-slate-900 text-slate-300">
               <th class="p-4 font-semibold" data-i18n="comp_th_feat">Funktion</th>
@@ -402,9 +490,12 @@
             </tr>
             <tr>
               <td class="p-4 font-medium" data-i18n="comp_r2_feat">Schnittdaten-Sync (OMAX®-kompatibel)</td>
-              <td class="p-4 text-rose-400" data-i18n-html="comp_r2_excel"><i class="fa-solid fa-xmark"></i> Nicht vorhanden</td>
-              <td class="p-4 text-rose-400" data-i18n-html="comp_r2_erp"><i class="fa-solid fa-xmark"></i> Teure Schnittstelle</td>
-              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n-html="comp_r2_pro"><i class="fa-solid fa-check"></i> Voll integriert</td>
+              <td class="p-4 text-rose-400" data-i18n-html="comp_r2_excel"><i class="fa-solid fa-xmark"></i> Nicht
+                vorhanden</td>
+              <td class="p-4 text-rose-400" data-i18n-html="comp_r2_erp"><i class="fa-solid fa-xmark"></i> Teure
+                Schnittstelle</td>
+              <td class="p-4 font-bold text-emerald-400 bg-cyan-950/20" data-i18n-html="comp_r2_pro"><i
+                  class="fa-solid fa-check"></i> Voll integriert</td>
             </tr>
             <tr>
               <td class="p-4 font-medium" data-i18n="comp_r3_feat">Einarbeitungszeit</td>
@@ -435,48 +526,67 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
         <div class="text-center mb-8">
-          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="form_badge">Kostenlose Testversion</span>
-          <h2 class="text-3xl font-bold text-white mt-2" data-i18n="form_title">Blechkalkulator Pro für deinen Betrieb</h2>
-          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Teste die Software 14 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.</p>
+          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="form_badge">Kostenlose
+            Testversion</span>
+          <h2 class="text-3xl font-bold text-white mt-2" data-i18n="form_title">Blechkalkulator Pro für deinen Betrieb
+          </h2>
+          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Teste die Software 14 Tage unverbindlich auf
+            deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.</p>
         </div>
 
         <form onsubmit="handleFormSubmit(event)" class="space-y-4">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_name">Ansprechpartner / Name *</label>
-              <input id="input-name" type="text" required placeholder="z. B. Markus Schmidt" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_name">Ansprechpartner /
+                Name *</label>
+              <input id="input-name" type="text" required placeholder="z. B. Markus Schmidt"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_email">Geschäftliche E-Mail-Adresse *</label>
-              <input id="input-email" type="email" required placeholder="schmidt@zerspanung-gmbh.de" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_email">Geschäftliche
+                E-Mail-Adresse *</label>
+              <input id="input-email" type="email" required placeholder="schmidt@zerspanung-gmbh.de"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_company">Firma / Unternehmen</label>
-              <input id="input-company" type="text" placeholder="z. B. Schmidt Wasserstrahltechnik GmbH" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_company">Firma /
+                Unternehmen</label>
+              <input id="input-company" type="text" placeholder="z. B. Schmidt Wasserstrahltechnik GmbH"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_machine">Maschine / CAD-System (optional)</label>
-              <input id="input-machine" type="text" placeholder="z. B. OMAX 60120, MAXIEM, Sonstige" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_machine">Maschine /
+                CAD-System (optional)</label>
+              <input id="input-machine" type="text" placeholder="z. B. OMAX 60120, MAXIEM, Sonstige"
+                class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
           </div>
 
           <!-- GDPR Compliant Checkbox & Notice -->
           <div class="flex items-start gap-2 pt-2">
-            <input type="checkbox" required id="privacy-check" class="mt-1 rounded bg-slate-950 border-slate-800 text-cyan-600 focus:ring-0">
+            <input type="checkbox" required id="privacy-check"
+              class="mt-1 rounded bg-slate-950 border-slate-800 text-cyan-600 focus:ring-0">
             <label for="privacy-check" class="text-xs text-slate-400" data-i18n-html="form_privacy_consent">
-              Mit dem Absenden erkläre ich mich mit der Verarbeitung meiner angegebenen Daten zur Bearbeitung der Anfrage gemäß der <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Datenschutzerklärung</a> einverstanden. Die Einwilligung kann jederzeit per E-Mail an Buchhalterio@web.de widerrufen werden.
+              Mit dem Absenden erkläre ich mich mit der Verarbeitung meiner angegebenen Daten zur Bearbeitung der
+              Anfrage gemäß der <a href="datenschutz.html"
+                class="text-cyan-400 underline hover:text-cyan-300">Datenschutzerklärung</a> einverstanden. Die
+              Einwilligung kann jederzeit per E-Mail an Buchhalterio@web.de widerrufen werden.
             </label>
           </div>
 
-          <button id="form-submit-btn" type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-cyan-600/30 mt-4" data-i18n="form_btn_submit">
+          <button id="form-submit-btn" type="submit"
+            class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-sm transition shadow-lg shadow-cyan-600/30 mt-4"
+            data-i18n="form_btn_submit">
             Kostenlose Testversion & Download anfordern
           </button>
         </form>
 
-        <div id="form-success" class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center" data-i18n="form_success_msg">
+        <div id="form-success"
+          class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center"
+          data-i18n="form_success_msg">
           ✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir den Download-Link in Kürze per E-Mail zu.
         </div>
       </div>
@@ -486,15 +596,20 @@
   <!-- Footer with Legal Disclaimer and Direct Links -->
   <footer class="border-t border-slate-800 bg-slate-950 py-12 text-slate-400 text-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      
+
       <!-- Trademark & Liability Disclaimer Box -->
-      <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-400 leading-relaxed text-center sm:text-left space-y-2">
+      <div
+        class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-400 leading-relaxed text-center sm:text-left space-y-2">
         <div class="flex items-center gap-2 font-bold text-slate-300 text-xs justify-center sm:justify-start">
           <i class="fa-solid fa-shield-halved text-cyan-400"></i>
           <span>Rechtlicher Hinweis & Marken-Disclaimer:</span>
         </div>
         <p class="text-[11px] text-slate-500" data-i18n="footer_disclaimer">
-          OMAX®, MAKE®, LAYOUT® und IntelliMAX® sind eingetragene Warenzeichen der jeweiligen Rechteinhaber (OMAX Corporation / Hypertherm Associates). Die Software Blechkalkulator Pro ist eine unabhängige Drittanbieter-Lösung und steht in keiner geschäftlichen Verbindung, Partnerschaft oder Billigung durch die OMAX Corporation. Nennungen von OMAX-Systemen dienen ausschließlich der sachbezogenen Angabe von Schnittstellen- und Formatkompatibilitäten.
+          OMAX®, MAKE®, LAYOUT® und IntelliMAX® sind eingetragene Warenzeichen der jeweiligen Rechteinhaber (OMAX
+          Corporation / Hypertherm Associates). Die Software Blechkalkulator Pro ist eine unabhängige
+          Drittanbieter-Lösung und steht in keiner geschäftlichen Verbindung, Partnerschaft oder Billigung durch die
+          OMAX Corporation. Nennungen von OMAX-Systemen dienen ausschließlich der sachbezogenen Angabe von
+          Schnittstellen- und Formatkompatibilitäten.
         </p>
       </div>
 
@@ -720,7 +835,7 @@
         deBtn.className = "px-2.5 py-1 rounded-md transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400";
         enBtn.className = "px-2.5 py-1 rounded-md transition flex items-center gap-1.5 text-slate-400 hover:text-white";
         document.getElementById('hero-lang-badge').innerText = "🇩🇪 DE";
-        
+
         // Switch screenshots to German versions
         document.getElementById('hero-img').src = "assets/calc_de.png";
         document.getElementById('feat1-img').src = "assets/calc_de.png";
@@ -729,7 +844,7 @@
         enBtn.className = "px-2.5 py-1 rounded-md transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400";
         deBtn.className = "px-2.5 py-1 rounded-md transition flex items-center gap-1.5 text-slate-400 hover:text-white";
         document.getElementById('hero-lang-badge').innerText = "🇬🇧 EN";
-        
+
         // Switch screenshots to English versions
         document.getElementById('hero-img').src = "assets/calc_en.png";
         document.getElementById('feat1-img').src = "assets/calc_en.png";
@@ -770,7 +885,7 @@
       e.preventDefault();
       const form = e.target;
       const submitBtn = document.getElementById('form-submit-btn');
-      
+
       submitBtn.disabled = true;
       submitBtn.innerText = currentLang === 'en' ? 'Submitting...' : 'Wird übermittelt...';
 
@@ -794,12 +909,15 @@
 
         form.reset();
         document.getElementById('form-success').classList.remove('hidden');
-        submitBtn.innerText = currentLang === 'en' ? '✓ Submitted successfully' : '✓ Erfolgreich übermittelt';
+        submitBtn.innerText = currentLang === 'en' ? '✓ Forwarding to Download...' : '✓ Weiterleitung zum Download...';
+        
+        setTimeout(() => {
+          window.location.href = "download.html";
+        }, 800);
       } catch (err) {
         console.error(err);
         form.reset();
-        document.getElementById('form-success').classList.remove('hidden');
-        submitBtn.innerText = currentLang === 'en' ? '✓ Submitted successfully' : '✓ Erfolgreich übermittelt';
+        window.location.href = "download.html";
       }
     }
 
@@ -810,4 +928,5 @@
     });
   </script>
 </body>
+
 </html>
