@@ -105,13 +105,22 @@
         Sollte der Download nicht in wenigen Sekunden automatisch beginnen, klicke bitte auf den folgenden Button:
       </p>
 
-      <!-- Direct Download Button -->
-      <div class="mb-12">
+      <!-- Direct Download Button (ZIP Package) -->
+      <div class="mb-4">
         <a id="download-btn"
-          href="https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.6/Blechkalkulator_Pro_Setup_v1.0.6.exe"
+          href="https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.6/Blechkalkulator_Pro_Setup_v1.0.6.zip"
           class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-base transition shadow-xl shadow-cyan-600/30 hover:scale-[1.02]">
-          <i class="fa-solid fa-file-arrow-down text-xl"></i>
-          <span>Setup jetzt manuell herunterladen (11,4 MB)</span>
+          <i class="fa-solid fa-file-zipper text-xl"></i>
+          <span>Setup als ZIP herunterladen (Empfohlen, 60 MB)</span>
+        </a>
+      </div>
+
+      <!-- Alternative Direct Exe Download -->
+      <div class="mb-12 text-center">
+        <a href="https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.6/Blechkalkulator_Pro_Setup_v1.0.6.exe"
+          class="text-xs text-slate-400 hover:text-cyan-400 transition underline inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-file-arrow-down text-[11px]"></i>
+          Alternative: Direkter .exe Download (60 MB)
         </a>
       </div>
 
@@ -124,15 +133,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
-            <div class="text-cyan-400 font-bold text-sm">1. Herunterladen</div>
-            <div class="text-xs text-slate-300">Lade die Datei <code>Blechkalkulator_Pro_Setup_v1.0.6.exe</code> auf
-              deinen PC herunter.</div>
+            <div class="text-cyan-400 font-bold text-sm">1. ZIP entpacken</div>
+            <div class="text-xs text-slate-300">Lade <code>Blechkalkulator_Pro_Setup_v1.0.6.zip</code> herunter und entpacke die Datei (Rechtsklick &rarr; Alle extrahieren).</div>
           </div>
 
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
             <div class="text-cyan-400 font-bold text-sm">2. Installieren</div>
-            <div class="text-xs text-slate-300">Starte die Installation per Doppelklick und folge den kurzen Schritten
-              des Assistenten.</div>
+            <div class="text-xs text-slate-300">Starte <code>Blechkalkulator_Pro_Setup_v1.0.6.exe</code> und folge dem kurzen Setup-Assistenten.</div>
           </div>
 
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
@@ -250,7 +257,7 @@
   <!-- Auto Download Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const downloadUrl = "https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.6/Blechkalkulator_Pro_Setup_v1.0.6.exe";
+      const downloadUrl = "https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.6/Blechkalkulator_Pro_Setup_v1.0.6.zip";
       setTimeout(() => {
         window.location.href = downloadUrl;
       }, 1500);
