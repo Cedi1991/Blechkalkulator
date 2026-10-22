@@ -108,6 +108,7 @@
         <a href="#screenshots" data-i18n="nav_screenshots" class="hover:text-white transition">Live-Einblicke</a>
         <a href="#omax" data-i18n="nav_omax" class="hover:text-white transition">OMAX®-Kompatibilität</a>
         <a href="#comparison" data-i18n="nav_comparison" class="hover:text-white transition">Vorteile</a>
+        <a href="#pricing" data-i18n="nav_pricing" class="hover:text-white transition text-cyan-400 font-semibold">Preise</a>
       </nav>
 
       <div class="flex items-center gap-4">
@@ -523,7 +524,7 @@
               <td class="p-4 font-medium" data-i18n="comp_r5_feat">Preis / Lizenzmodell</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r5_excel">Office-Abonnement</td>
               <td class="p-4 text-slate-400" data-i18n="comp_r5_erp">5.000 € – 25.000 € + Mtl.</td>
-              <td class="p-4 font-bold text-cyan-400 bg-cyan-950/20">Faire Einmallizenz</td>
+              <td class="p-4 font-bold text-cyan-400 bg-cyan-950/20"><a href="#pricing" class="underline hover:text-cyan-300">1.299 € Einmalkauf</a></td>
             </tr>
           </tbody>
         </table>
@@ -531,30 +532,235 @@
     </div>
   </section>
 
-  <!-- Demo / Lead Registration Form -->
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-24 relative overflow-hidden bg-slate-950 border-t border-slate-800">
+    <div class="absolute inset-0 -z-10 flex items-center justify-center">
+      <div class="w-[600px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-400 mb-4 shadow-inner">
+          <i class="fa-solid fa-tag"></i>
+          <span data-i18n="pricing_badge">Transparente B2B-Konditionen</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4" data-i18n="pricing_title">
+          Faire Preise. Keine versteckten Kosten. Kein Abo-Zwang.
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base leading-relaxed" data-i18n="pricing_subtitle">
+          Wählen Sie die passende Lizenz für Ihren Betrieb – vom kostenlosen 7-Tage-Test bis zur vollen Einzelplatz- oder Firmenlizenz auf klassischer B2B-Rechnung.
+        </p>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1: 7-Tage Testversion -->
+        <div class="rounded-3xl bg-slate-900/70 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition relative">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1 rounded-full bg-slate-800 border border-slate-700" data-i18n="plan_trial_badge">
+                100% Unverbindlich
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2" data-i18n="plan_trial_title">7-Tage Testversion</h3>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed" data-i18n="plan_trial_desc">
+              Testen Sie alle Funktionen 7 Tage lang direkt an Ihren eigenen DXF-Dateien und Maschinen.
+            </p>
+            <div class="mb-6 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-white" data-i18n="plan_trial_price">0 €</span>
+              </div>
+              <span class="text-xs text-slate-500 font-medium" data-i18n="plan_trial_period">Sofortiger Download • Kein Abo</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_trial_f1"><strong>7 Tage uneingeschränkte Nutzung</strong></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_trial_f2">Vollständige DXF- & Werkzeugbahn-Erkennung</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_trial_f3">Kompatibel mit OMAX® MAKE Schnittdaten</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_trial_f4">Eigene Werkstoff- & Preisdatenbank</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_trial_f5">Keine Zahlungsdaten oder Kreditkarte nötig</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#demo" onclick="selectPlan('trial')" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs text-center transition flex items-center justify-center gap-2 border border-slate-700" data-i18n="plan_trial_btn">
+            <span>Kostenlos testen</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- Tier 2: Einzelplatz-Vollversion (HERO) -->
+        <div class="rounded-3xl bg-slate-900 border-2 border-cyan-500/80 p-8 flex flex-col justify-between relative shadow-2xl shadow-cyan-500/10 lg:-translate-y-3">
+          <!-- Highlight Pill -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-extrabold text-[11px] tracking-wide uppercase shadow-md flex items-center gap-1.5 whitespace-nowrap" data-i18n="plan_single_badge">
+            <i class="fa-solid fa-star"></i> Empfohlen für Lohnfertiger
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400" data-i18n="plan_single_tag">Dauerlizenz (Lifetime)</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-white mb-2" data-i18n="plan_single_title">Einzelplatz-Vollversion</h3>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed" data-i18n="plan_single_desc">
+              Die unbegrenzte Kauflizenz für einen vollwertigen Arbeitsplatz in Arbeitsvorbereitung, Büro oder Werkstatt.
+            </p>
+            <div class="mb-6 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl sm:text-5xl font-black text-white" data-i18n="plan_single_price">1.299 €</span>
+                <span class="text-xs text-slate-400 font-medium" data-i18n="plan_single_tax">zzgl. gesetzl. MwSt.</span>
+              </div>
+              <span class="text-xs text-emerald-400 font-semibold" data-i18n="plan_single_period">Einmalkauf • Keine laufenden Softwaregebühren</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f1"><strong>Dauerhafte Nutzungslizenz</strong> für 1 PC / Arbeitsplatz</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f2"><strong>12 Monate Updates & Patches</strong> inklusive</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f3"><strong>12 Monate persönlicher E-Mail-Support</strong></span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f4"><strong>Offline-Aktivierung:</strong> Hardware-gebundener Aktivierungsschlüssel</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f5">Unbegrenzte Werkstoffe, Blechdicken & Währungen</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                <span data-i18n-html="plan_single_f6"><strong>Klassischer B2B-Kauf auf Rechnung</strong> (ordnungsgemäße Firmenrechnung)</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#demo" onclick="selectPlan('single')" class="w-full py-4 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-sm text-center transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20" data-i18n="plan_single_btn">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Auf Rechnung bestellen</span>
+          </a>
+        </div>
+
+        <!-- Tier 3: Team- & Mehrplatz -->
+        <div class="rounded-3xl bg-slate-900/70 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition relative">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 px-3 py-1 rounded-full bg-slate-800 border border-slate-700" data-i18n="plan_multi_badge">
+                Firmen & Teams
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2" data-i18n="plan_multi_title">Team- & Mehrplatzlizenz</h3>
+            <p class="text-xs text-slate-400 mb-6 leading-relaxed" data-i18n="plan_multi_desc">
+              Attraktive Konditionen für Betriebe mit mehreren Arbeitsplätzen (z. B. AV, Büro & Fertigung).
+            </p>
+            <div class="mb-6 pb-6 border-b border-slate-800">
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-extrabold text-white" data-i18n="plan_multi_price">Auf Anfrage</span>
+              </div>
+              <span class="text-xs text-slate-500 font-medium" data-i18n="plan_multi_period">Staffelpreise & Mengenrabatte ab 2 Plätzen</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-slate-300 mb-8">
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_multi_f1"><strong>Ab 2 Arbeitsplätzen</strong> mit flexiblem Mengenrabatt</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_multi_f2">Zentrale Firmenrechnung & Lizenzschlüssel-Verwaltung</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_multi_f3"><strong>Bevorzugter Support</strong> (E-Mail & direkter Ansprechpartner)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_multi_f4">Hilfe bei der initialen Stammdaten-Einpflege</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                <span data-i18n-html="plan_multi_f5">Möglichkeit für individuelle Anpassungswünsche</span>
+              </li>
+            </ul>
+          </div>
+
+          <a href="#demo" onclick="selectPlan('multi')" class="w-full py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs text-center transition flex items-center justify-center gap-2 border border-slate-700" data-i18n="plan_multi_btn">
+            <span>Mehrplatz-Angebot anfragen</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- B2B Trust Reassurance Banner -->
+      <div class="mt-12 p-6 rounded-2xl bg-slate-900/40 border border-slate-800 text-center flex flex-col sm:flex-row items-center justify-around gap-4 text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-cyan-400 text-base"></i>
+          <span data-i18n="pricing_trust1">100% Offline-fähig – Keine Cloud, keine Datenlecks</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-file-invoice text-emerald-400 text-base"></i>
+          <span data-i18n="pricing_trust2">Offizielle Firmenrechnung mit ausgewiesener Mehrwertsteuer</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-ban text-amber-400 text-base"></i>
+          <span data-i18n="pricing_trust3">Kein Abo – Einmal zahlen, dauerhaft nutzen</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Demo / Order / Inquiry Form -->
   <section id="demo" class="py-20 relative bg-slate-900/40 border-t border-slate-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl relative overflow-hidden">
         <div class="text-center mb-8">
-          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="form_badge">Kostenlose
-            Testversion</span>
-          <h2 class="text-3xl font-bold text-white mt-2" data-i18n="form_title">Blechkalkulator Pro für deinen Betrieb
-          </h2>
-          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Teste die Software 7 Tage unverbindlich auf
-            deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.</p>
+          <span class="text-xs font-semibold uppercase tracking-wider text-cyan-400" data-i18n="form_badge">Kostenlose Testversion & Bestellung</span>
+          <h2 class="text-3xl font-bold text-white mt-2" data-i18n="form_title">Blechkalkulator Pro für deinen Betrieb</h2>
+          <p class="text-sm text-slate-400 mt-2" data-i18n="form_subtitle">Testen Sie die Software 7 Tage unverbindlich oder bestellen Sie direkt Ihre Einzelplatz-Vollversion auf Firmenrechnung.</p>
         </div>
 
         <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+          <!-- License Type Selection Dropdown -->
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_interest">Gewünschte Lizenz / Anliegen *</label>
+            <select id="input-license-type" onchange="updateFormForLicense(this.value)"
+              class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-cyan-500 text-sm">
+              <option value="trial" data-i18n="form_opt_trial">7 Tage kostenlose Testversion anfordern (0 €)</option>
+              <option value="single" data-i18n="form_opt_single">Einzelplatz-Vollversion auf Rechnung bestellen (1.299 € zzgl. MwSt.)</option>
+              <option value="multi" data-i18n="form_opt_multi">Individuelles Mehrplatz- / Firmenangebot anfragen</option>
+            </select>
+          </div>
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_name">Ansprechpartner /
-                Name *</label>
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_name">Ansprechpartner / Name *</label>
               <input id="input-name" type="text" required placeholder="z. B. Markus Schmidt"
                 class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_email">Geschäftliche
-                E-Mail-Adresse *</label>
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_email">Geschäftliche E-Mail-Adresse *</label>
               <input id="input-email" type="email" required placeholder="schmidt@zerspanung-gmbh.de"
                 class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
@@ -562,14 +768,12 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_company">Firma /
-                Unternehmen</label>
-              <input id="input-company" type="text" placeholder="z. B. Schmidt Wasserstrahltechnik GmbH"
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_company">Firma / Unternehmen *</label>
+              <input id="input-company" type="text" required placeholder="z. B. Schmidt Wasserstrahltechnik GmbH"
                 class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_machine">Maschine /
-                CAD-System (optional)</label>
+              <label class="block text-xs font-medium text-slate-300 mb-1" data-i18n="form_lbl_machine">Maschine / CAD-System (optional)</label>
               <input id="input-machine" type="text" placeholder="z. B. OMAX 60120, MAXIEM, Sonstige"
                 class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
             </div>
@@ -597,7 +801,7 @@
         <div id="form-success"
           class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center"
           data-i18n="form_success_msg">
-          ✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir den Download-Link in Kürze per E-Mail zu.
+          ✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir die Unterlagen in Kürze per E-Mail zu.
         </div>
       </div>
     </div>
@@ -720,17 +924,64 @@
         comp_r5_feat: "Preis / Lizenzmodell",
         comp_r5_excel: "Office-Abonnement",
         comp_r5_erp: "5.000 € – 25.000 € + Mtl.",
-        comp_r5_pro: "Faire Einmallizenz",
-        form_badge: "Kostenlose Testversion",
+        comp_r5_pro: "1.299 € Einmalkauf",
+        nav_pricing: "Preise",
+        pricing_badge: "Transparente B2B-Konditionen",
+        pricing_title: "Faire Preise. Keine versteckten Kosten. Kein Abo-Zwang.",
+        pricing_subtitle: "Wählen Sie die passende Lizenz für Ihren Betrieb – vom kostenlosen 7-Tage-Test bis zur vollen Einzelplatz- oder Firmenlizenz auf klassischer B2B-Rechnung.",
+        plan_trial_badge: "100% Unverbindlich",
+        plan_trial_title: "7-Tage Testversion",
+        plan_trial_price: "0 €",
+        plan_trial_period: "Sofortiger Download • Kein Abo",
+        plan_trial_desc: "Testen Sie alle Funktionen 7 Tage lang direkt an Ihren eigenen DXF-Dateien und Maschinen.",
+        plan_trial_f1: "<strong>7 Tage uneingeschränkte Nutzung</strong>",
+        plan_trial_f2: "Vollständige DXF- & Werkzeugbahn-Erkennung",
+        plan_trial_f3: "Kompatibel mit OMAX® MAKE Schnittdaten",
+        plan_trial_f4: "Eigene Werkstoff- & Preisdatenbank",
+        plan_trial_f5: "Keine Zahlungsdaten oder Kreditkarte nötig",
+        plan_trial_btn: '<span>Kostenlos testen</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>',
+        plan_single_badge: '<i class="fa-solid fa-star"></i> Empfohlen für Lohnfertiger',
+        plan_single_tag: "Dauerlizenz (Lifetime)",
+        plan_single_title: "Einzelplatz-Vollversion",
+        plan_single_price: "1.299 €",
+        plan_single_tax: "zzgl. gesetzl. MwSt.",
+        plan_single_period: "Einmalkauf • Keine laufenden Softwaregebühren",
+        plan_single_desc: "Die unbegrenzte Kauflizenz für einen vollwertigen Arbeitsplatz in Arbeitsvorbereitung, Büro oder Werkstatt.",
+        plan_single_f1: "<strong>Dauerhafte Nutzungslizenz</strong> für 1 PC / Arbeitsplatz",
+        plan_single_f2: "<strong>12 Monate Updates & Patches</strong> inklusive",
+        plan_single_f3: "<strong>12 Monate persönlicher E-Mail-Support</strong>",
+        plan_single_f4: "<strong>Offline-Aktivierung:</strong> Hardware-gebundener Aktivierungsschlüssel",
+        plan_single_f5: "Unbegrenzte Werkstoffe, Blechdicken & Währungen",
+        plan_single_f6: "<strong>Klassischer B2B-Kauf auf Rechnung</strong> (ordnungsgemäße Firmenrechnung)",
+        plan_single_btn: '<i class="fa-solid fa-file-invoice-dollar"></i> <span>Auf Rechnung bestellen</span>',
+        plan_multi_badge: "Firmen & Teams",
+        plan_multi_title: "Team- & Mehrplatzlizenz",
+        plan_multi_price: "Auf Anfrage",
+        plan_multi_period: "Staffelpreise & Mengenrabatte ab 2 Plätzen",
+        plan_multi_desc: "Attraktive Konditionen für Betriebe mit mehreren Arbeitsplätzen (z. B. AV, Büro & Fertigung).",
+        plan_multi_f1: "<strong>Ab 2 Arbeitsplätzen</strong> mit flexiblem Mengenrabatt",
+        plan_multi_f2: "Zentrale Firmenrechnung & Lizenzschlüssel-Verwaltung",
+        plan_multi_f3: "<strong>Bevorzugter Support</strong> (E-Mail & direkter Ansprechpartner)",
+        plan_multi_f4: "Hilfe bei der initialen Stammdaten-Einpflege",
+        plan_multi_f5: "Möglichkeit für individuelle Anpassungswünsche",
+        plan_multi_btn: '<span>Mehrplatz-Angebot anfragen</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>',
+        pricing_trust1: "100% Offline-fähig – Keine Cloud, keine Datenlecks",
+        pricing_trust2: "Offizielle Firmenrechnung mit ausgewiesener Mehrwertsteuer",
+        pricing_trust3: "Kein Abo – Einmal zahlen, dauerhaft nutzen",
+        form_badge: "Kostenlose Testversion & Bestellung",
         form_title: "Blechkalkulator Pro für deinen Betrieb",
-        form_subtitle: "Teste die Software 7 Tage unverbindlich auf deinem Windows-PC oder fordere ein individuelles Lizenzangebot an.",
+        form_subtitle: "Testen Sie die Software 7 Tage unverbindlich oder bestellen Sie direkt Ihre Einzelplatz-Vollversion auf Firmenrechnung.",
+        form_lbl_interest: "Gewünschte Lizenz / Anliegen *",
+        form_opt_trial: "7 Tage kostenlose Testversion anfordern (0 €)",
+        form_opt_single: "Einzelplatz-Vollversion auf Rechnung bestellen (1.299 € zzgl. MwSt.)",
+        form_opt_multi: "Individuelles Mehrplatz- / Firmenangebot anfragen",
         form_lbl_name: "Ansprechpartner / Name *",
         form_lbl_email: "Geschäftliche E-Mail-Adresse *",
-        form_lbl_company: "Firma / Unternehmen",
+        form_lbl_company: "Firma / Unternehmen *",
         form_lbl_machine: "Maschine / CAD-System (optional)",
         form_privacy_consent: 'Mit dem Absenden erkläre ich mich mit der Verarbeitung meiner angegebenen Daten zur Bearbeitung der Anfrage gemäß der <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Datenschutzerklärung</a> einverstanden. Die Einwilligung kann jederzeit per E-Mail an info@blechkalkulator.de widerrufen werden.',
         form_btn_submit: "Kostenlose Testversion & Download anfordern",
-        form_success_msg: "✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir den Download-Link in Kürze per E-Mail zu.",
+        form_success_msg: "✓ Vielen Dank! Wir haben deine Anfrage erhalten und senden dir die Unterlagen in Kürze per E-Mail zu.",
         footer_rights: "© 2026 Cedric Müllers. Alle Rechte vorbehalten.",
         footer_imprint: "Impressum",
         footer_privacy: "Datenschutz",
@@ -743,6 +994,7 @@
         nav_screenshots: "Live Preview",
         nav_omax: "OMAX® Compatibility",
         nav_comparison: "Advantages",
+        nav_pricing: "Pricing",
         nav_cta: "Free Trial",
         hero_badge: "Automatic Cutting Data Import (Compatible with OMAX® MAKE & DXF)",
         hero_title: 'Waterjet Quotations in <br class="hidden sm:inline"><span class="gradient-text">5 Seconds instead of 15 Minutes.</span>',
@@ -813,17 +1065,63 @@
         comp_r5_feat: "Pricing & Licensing",
         comp_r5_excel: "Office Subscriptions",
         comp_r5_erp: "$5,000 – $25,000 + Maint.",
-        comp_r5_pro: "Fair Lifetime License",
-        form_badge: "Free 7-Day Trial",
+        comp_r5_pro: "1,299 € Lifetime",
+        pricing_badge: "Transparent B2B Pricing",
+        pricing_title: "Fair Pricing. Zero Hidden Fees. No Subscription Lock-In.",
+        pricing_subtitle: "Choose the right plan for your business – from a 7-day risk-free trial to perpetual single-workstation or multi-seat licenses on company invoice.",
+        plan_trial_badge: "100% Risk-Free",
+        plan_trial_title: "7-Day Free Trial",
+        plan_trial_price: "0 €",
+        plan_trial_period: "Instant Download • No Subscription",
+        plan_trial_desc: "Test all features for 7 days directly on your own DXF drawings and machines.",
+        plan_trial_f1: "<strong>7 days unrestricted full access</strong>",
+        plan_trial_f2: "Full DXF & toolpath boundary detection",
+        plan_trial_f3: "Compatible with OMAX® MAKE cutting data",
+        plan_trial_f4: "Custom materials & pricing database",
+        plan_trial_f5: "No payment details or credit card required",
+        plan_trial_btn: '<span>Start Free Trial</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>',
+        plan_single_badge: '<i class="fa-solid fa-star"></i> Recommended for Job Shops',
+        plan_single_tag: "Perpetual License (Lifetime)",
+        plan_single_title: "Single Workstation License",
+        plan_single_price: "1,299 €",
+        plan_single_tax: "excl. VAT / Sales Tax",
+        plan_single_period: "One-time purchase • Zero recurring software fees",
+        plan_single_desc: "The full perpetual license for one workstation in estimating, office, or workshop.",
+        plan_single_f1: "<strong>Perpetual lifetime license</strong> for 1 PC / workstation",
+        plan_single_f2: "<strong>12 months of updates & patches</strong> included",
+        plan_single_f3: "<strong>12 months dedicated email support</strong>",
+        plan_single_f4: "<strong>Offline activation:</strong> Hardware-locked activation key",
+        plan_single_f5: "Unlimited custom materials, sheet gauges & currencies",
+        plan_single_f6: "<strong>Classic B2B invoice</strong> with VAT ID & formal invoice",
+        plan_single_btn: '<i class="fa-solid fa-file-invoice-dollar"></i> <span>Order on Invoice</span>',
+        plan_multi_badge: "Companies & Teams",
+        plan_multi_title: "Team & Multi-Seat License",
+        plan_multi_price: "On Request",
+        plan_multi_period: "Volume tiered discounts from 2+ seats",
+        plan_multi_desc: "Tailored packages for shops outfitting multiple estimators, engineers, and machine operators.",
+        plan_multi_f1: "<strong>From 2 workstations</strong> with flexible volume discounts",
+        plan_multi_f2: "Centralized company invoice & bundle license keys",
+        plan_multi_f3: "<strong>Priority support</strong> (email & direct contact)",
+        plan_multi_f4: "Assistance with custom material data onboarding",
+        plan_multi_f5: "Custom integration requests possible",
+        plan_multi_btn: '<span>Request Team Quotation</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>',
+        pricing_trust1: "100% Offline-Capable – No cloud, no data leaks",
+        pricing_trust2: "Official B2B invoice with deductible VAT",
+        pricing_trust3: "No Subscription – Pay once, use perpetually",
+        form_badge: "Free Trial & Ordering",
         form_title: "Blechkalkulator Pro for Your Business",
-        form_subtitle: "Test the software for 7 days on your Windows PC or request a personalized quotation.",
+        form_subtitle: "Test the software for 7 days risk-free or order your single-workstation license directly on company invoice.",
+        form_lbl_interest: "Selected License / Inquiring for *",
+        form_opt_trial: "Request 7-day free trial (0 €)",
+        form_opt_single: "Order Single Workstation on invoice (1,299 € excl. VAT)",
+        form_opt_multi: "Request custom Multi-Seat / Team quotation",
         form_lbl_name: "Contact Person / Name *",
         form_lbl_email: "Business Email Address *",
-        form_lbl_company: "Company Name",
+        form_lbl_company: "Company Name *",
         form_lbl_machine: "Waterjet Machine / CAD (optional)",
         form_privacy_consent: 'By submitting, I agree to the processing of my contact data in accordance with the <a href="datenschutz.html" class="text-cyan-400 underline hover:text-cyan-300">Privacy Policy</a>. Consent can be revoked at any time via email to info@blechkalkulator.de.',
         form_btn_submit: "Request Free Trial & Download Link",
-        form_success_msg: "✓ Thank you! We received your request and will send you the installer download link shortly.",
+        form_success_msg: "✓ Thank you! We received your request and will send you the documentation shortly via email.",
         footer_rights: "© 2026 Cedric Müllers. All rights reserved.",
         footer_imprint: "Legal Notice",
         footer_privacy: "Privacy Policy",
@@ -885,6 +1183,47 @@
         document.getElementById('input-company').placeholder = "z. B. Schmidt Wasserstrahltechnik GmbH";
         document.getElementById('input-machine').placeholder = "z. B. OMAX 60120, MAXIEM, Sonstige";
       }
+
+      // Refresh dynamic button text based on currently selected plan
+      const licenseSelect = document.getElementById('input-license-type');
+      if (licenseSelect) {
+        updateFormForLicense(licenseSelect.value);
+      }
+    }
+
+    // Interactive Plan Selector
+    function selectPlan(plan) {
+      const licenseSelect = document.getElementById('input-license-type');
+      if (licenseSelect) {
+        licenseSelect.value = plan;
+        updateFormForLicense(plan);
+      }
+      const demoSection = document.getElementById('demo');
+      if (demoSection) {
+        demoSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      setTimeout(() => {
+        const nameInput = document.getElementById('input-name');
+        if (nameInput) nameInput.focus();
+      }, 500);
+    }
+
+    function updateFormForLicense(plan) {
+      const submitBtn = document.getElementById('form-submit-btn');
+      if (!submitBtn) return;
+      if (plan === 'single') {
+        submitBtn.innerHTML = currentLang === 'en' 
+          ? '<i class="fa-solid fa-file-invoice-dollar mr-2"></i> Order Workstation License on Invoice (1,299 € excl. VAT)' 
+          : '<i class="fa-solid fa-file-invoice-dollar mr-2"></i> Einzelplatz-Vollversion verbindlich auf Rechnung bestellen';
+      } else if (plan === 'multi') {
+        submitBtn.innerHTML = currentLang === 'en' 
+          ? '<i class="fa-solid fa-envelope mr-2"></i> Request Team Quotation' 
+          : '<i class="fa-solid fa-envelope mr-2"></i> Unverbindliches Mehrplatz-Angebot anfordern';
+      } else {
+        submitBtn.innerHTML = currentLang === 'en' 
+          ? '<i class="fa-solid fa-download mr-2"></i> Request Free Trial & Download Link' 
+          : '<i class="fa-solid fa-download mr-2"></i> Kostenlose Testversion & Download anfordern';
+      }
     }
 
     // Supabase / Webhook Lead Capture
@@ -895,6 +1234,7 @@
       e.preventDefault();
       const form = e.target;
       const submitBtn = document.getElementById('form-submit-btn');
+      const licenseType = document.getElementById('input-license-type').value;
 
       submitBtn.disabled = true;
       submitBtn.innerText = currentLang === 'en' ? 'Submitting...' : 'Wird übermittelt...';
@@ -902,7 +1242,7 @@
       const payload = {
         name: document.getElementById('input-name').value,
         email: document.getElementById('input-email').value,
-        industry: (document.getElementById('input-company').value || '') + ' | ' + (document.getElementById('input-machine').value || '')
+        industry: `[Lizenz: ${licenseType}] ` + (document.getElementById('input-company').value || '') + ' | ' + (document.getElementById('input-machine').value || '')
       };
 
       try {
@@ -918,12 +1258,29 @@
         });
 
         form.reset();
-        document.getElementById('form-success').classList.remove('hidden');
+        const successBox = document.getElementById('form-success');
+        if (successBox) {
+          if (licenseType === 'single') {
+            successBox.innerHTML = currentLang === 'en'
+              ? '✓ Thank you for your order! We have received your details and will send your formal invoice and license keys shortly to your email. Redirecting to download...'
+              : '✓ Vielen Dank für Ihre Bestellung! Wir haben Ihre Firmendaten erhalten und senden Ihnen die offizielle Rechnung sowie den Freischaltschlüssel zeitnah per E-Mail zu. Weiterleitung zum Download...';
+          } else if (licenseType === 'multi') {
+            successBox.innerHTML = currentLang === 'en'
+              ? '✓ Thank you! We received your inquiry and will send you a customized multi-seat quotation shortly. Redirecting to download...'
+              : '✓ Vielen Dank für Ihre Anfrage! Wir erstellen Ihnen ein individuelles Mehrplatz-Angebot und melden uns in Kürze. Weiterleitung zum Download...';
+          } else {
+            successBox.innerHTML = currentLang === 'en'
+              ? '✓ Thank you! We received your request. Redirecting to download...'
+              : '✓ Vielen Dank! Wir haben Ihre Anfrage erhalten. Weiterleitung zum Download...';
+          }
+          successBox.classList.remove('hidden');
+        }
+
         submitBtn.innerText = currentLang === 'en' ? '✓ Forwarding to Download...' : '✓ Weiterleitung zum Download...';
         
         setTimeout(() => {
           window.location.href = "download.html";
-        }, 800);
+        }, 1200);
       } catch (err) {
         console.error(err);
         form.reset();
