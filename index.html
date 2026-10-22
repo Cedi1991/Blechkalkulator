@@ -88,48 +88,91 @@
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
 
   <!-- Header / Navigation -->
-  <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 shrink-0 group">
         <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20">
+          class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition">
           <i class="fa-solid fa-bolt"></i>
         </div>
-        <span class="text-xl font-bold tracking-tight text-white">Blechkalkulator <span
-            class="text-cyan-400">Pro</span></span>
+        <div class="flex flex-col">
+          <span class="text-lg sm:text-xl font-bold tracking-tight text-white whitespace-nowrap leading-tight">
+            Blechkalkulator <span class="text-cyan-400">Pro</span>
+          </span>
+          <span class="text-[10px] text-slate-400 font-medium tracking-wide whitespace-nowrap">Wasserstrahl & DXF</span>
+        </div>
         <span
-          class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-medium">v1.0.8
-          Ready</span>
-      </div>
+          class="hidden 2xl:inline-flex items-center px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-semibold tracking-wide whitespace-nowrap ml-1">
+          v1.0.8
+        </span>
+      </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#video" data-i18n="nav_video" class="hover:text-white transition">Video</a>
-        <a href="#features" data-i18n="nav_features" class="hover:text-white transition">Funktionen</a>
-        <a href="#screenshots" data-i18n="nav_screenshots" class="hover:text-white transition">Live-Einblicke</a>
-        <a href="#omax" data-i18n="nav_omax" class="hover:text-white transition">OMAX®-Kompatibilität</a>
-        <a href="#comparison" data-i18n="nav_comparison" class="hover:text-white transition">Vorteile</a>
-        <a href="#pricing" data-i18n="nav_pricing" class="hover:text-white transition text-cyan-400 font-semibold">Preise</a>
+      <!-- Desktop Navigation Links (Pill Style with generous spacing) -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-sm font-medium text-slate-300">
+        <a href="#video" data-i18n="nav_video"
+          class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition whitespace-nowrap">Video</a>
+        <a href="#features" data-i18n="nav_features"
+          class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition whitespace-nowrap">Funktionen</a>
+        <a href="#screenshots" data-i18n="nav_screenshots"
+          class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition whitespace-nowrap">Vorschau</a>
+        <a href="#omax" data-i18n="nav_omax"
+          class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition whitespace-nowrap">OMAX®-Sync</a>
+        <a href="#comparison" data-i18n="nav_comparison"
+          class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-900 transition whitespace-nowrap">Vorteile</a>
+        <a href="#pricing" data-i18n="nav_pricing"
+          class="px-3.5 py-1.5 rounded-lg text-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 font-semibold border border-cyan-500/20 transition whitespace-nowrap flex items-center gap-1.5">
+          <i class="fa-solid fa-tag text-xs"></i>
+          <span>Preise</span>
+        </a>
       </nav>
 
-      <div class="flex items-center gap-4">
+      <!-- Right Actions: Language Selector + CTA + Mobile Toggle -->
+      <div class="flex items-center gap-3 shrink-0">
         <!-- Language Switcher Button -->
         <div
-          class="relative inline-flex items-center bg-slate-900 border border-slate-800 rounded-lg p-1 text-xs font-semibold">
+          class="inline-flex items-center bg-slate-900 border border-slate-800 rounded-xl p-1 text-xs font-semibold shrink-0 shadow-inner">
           <button id="lang-de-btn" onclick="setLanguage('de')"
-            class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400">
+            class="px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400 whitespace-nowrap">
             <span>🇩🇪</span> <span>DE</span>
           </button>
           <button id="lang-en-btn" onclick="setLanguage('en')"
-            class="px-2.5 py-1 rounded-md transition flex items-center gap-1.5 text-slate-400 hover:text-white">
+            class="px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 text-slate-400 hover:text-white whitespace-nowrap">
             <span>🇬🇧</span> <span>EN</span>
           </button>
         </div>
 
         <a href="#demo" data-i18n="nav_cta"
-          class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white text-sm font-semibold transition shadow-lg shadow-cyan-600/20">
-          Kostenlos testen
+          class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 text-sm font-bold transition shadow-lg shadow-cyan-500/20 whitespace-nowrap shrink-0 flex items-center gap-1.5">
+          <i class="fa-solid fa-bolt text-xs"></i>
+          <span>Kostenlos testen</span>
         </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button onclick="toggleMobileMenu()"
+          class="lg:hidden p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white focus:outline-none transition"
+          aria-label="Menü">
+          <i class="fa-solid fa-bars text-base"></i>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+      class="hidden lg:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-2">
+      <a href="#video" onclick="toggleMobileMenu()" data-i18n="nav_video"
+        class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Video</a>
+      <a href="#features" onclick="toggleMobileMenu()" data-i18n="nav_features"
+        class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Funktionen</a>
+      <a href="#screenshots" onclick="toggleMobileMenu()" data-i18n="nav_screenshots"
+        class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Vorschau</a>
+      <a href="#omax" onclick="toggleMobileMenu()" data-i18n="nav_omax"
+        class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">OMAX®-Sync</a>
+      <a href="#comparison" onclick="toggleMobileMenu()" data-i18n="nav_comparison"
+        class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-900 transition">Vorteile</a>
+      <a href="#pricing" onclick="toggleMobileMenu()" data-i18n="nav_pricing"
+        class="block px-3 py-2 rounded-lg text-sm font-semibold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 transition">Preise</a>
     </div>
   </header>
 
@@ -851,9 +894,10 @@
       de: {
         nav_video: "Video",
         nav_features: "Funktionen",
-        nav_screenshots: "Live-Einblicke",
-        nav_omax: "OMAX®-Kompatibilität",
+        nav_screenshots: "Vorschau",
+        nav_omax: "OMAX®-Sync",
         nav_comparison: "Vorteile",
+        nav_pricing: "Preise",
         nav_cta: "Kostenlos testen",
         hero_badge: "Automatische Schnittdaten-Übernahme (kompatibel mit OMAX® MAKE & DXF)",
         hero_title: 'Wasserstrahl-Angebote in <br class="hidden sm:inline"><span class="gradient-text">5 Sekunden statt 15 Minuten.</span>',
@@ -991,8 +1035,8 @@
       en: {
         nav_video: "Video",
         nav_features: "Features",
-        nav_screenshots: "Live Preview",
-        nav_omax: "OMAX® Compatibility",
+        nav_screenshots: "Preview",
+        nav_omax: "OMAX® Sync",
         nav_comparison: "Advantages",
         nav_pricing: "Pricing",
         nav_cta: "Free Trial",
@@ -1286,6 +1330,12 @@
         form.reset();
         window.location.href = "download.html";
       }
+    }
+
+    // Mobile Menu Drawer Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
     }
 
     // Initialize saved language preference if any
