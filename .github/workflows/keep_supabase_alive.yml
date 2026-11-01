@@ -11,5 +11,16 @@ jobs:
     steps:
       - name: Ping Supabase REST API
         run: |
-          URL="https://gqmarabspmnadhamxjxi.supabase.co/rest/v1/app_updates?select=id&limit=1"
-          KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE
+          BASE_URL="https://gqmarabspmnadhamxjxi.supabase.co"
+          ENDPOINT="/rest/v1/app_updates?select=id&limit=1"
+          KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4"
+          
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${BASE_URL}${ENDPOINT}" -H "apikey: $KEY" -H "Authorization: Bearer $KEY")
+          
+          echo "Supabase Response Code: $STATUS"
+          if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
+            echo "✓ Supabase successfully pinged! Project remains active."
+          else
+            echo "Status Code: $STATUS"
+            exit 1
+          fi
