@@ -1,4 +1,4 @@
-name: Keep Supabase Active
+Name: Keep Supabase Active
 
 on:
   schedule:
@@ -12,12 +12,11 @@ jobs:
     steps:
       - name: Ping Supabase REST API
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://gqmarabspmnadhamxjxi.supabase.co/rest/v1/app_updates?select=id&limit=1" \
-            -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4" \
-            -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://gqmarabspmnadhamxjxi.supabase.co/rest/v1/app_updates?select=id&limit=1" -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4")
           echo "Supabase Response Code: $STATUS"
           if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
             echo "✓ Supabase successfully pinged! Project remains active."
           else
             echo "Status Code: $STATUS"
+            exit 1
           fi
