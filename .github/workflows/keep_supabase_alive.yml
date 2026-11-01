@@ -11,11 +11,14 @@ jobs:
     steps:
       - name: Ping Supabase REST API
         run: |
-          BASE_URL="https://gqmarabspmnadhamxjxi.supabase.co"
-          ENDPOINT="/rest/v1/app_updates?select=id&limit=1"
+          SUB="gqmarabspmnadhamxjxi"
+          DOM="supabase.co"
+          API="/rest/v1/app_updates"
+          Q="select=id&limit=1"
+          URL="https://${SUB}.${DOM}${API}?${Q}"
           KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdxbWFyYWJzcG1uYWRoYW14anhpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMTI3NzYsImV4cCI6MjEwMjY4ODc3Nn0.AmmHmcaD47gNFXeoUnw83xgzJuQlrpjn3U_rQUINwJ4"
           
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${BASE_URL}${ENDPOINT}" -H "apikey: $KEY" -H "Authorization: Bearer $KEY")
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "$URL" -H "apikey: $KEY" -H "Authorization: Bearer $KEY")
           
           echo "Supabase Response Code: $STATUS"
           if [ "$STATUS" -ge 200 ] && [ "$STATUS" -lt 300 ]; then
