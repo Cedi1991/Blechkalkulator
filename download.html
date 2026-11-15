@@ -9,6 +9,9 @@
     content="Laden Sie das offizielle Setup von Blechkalkulator Pro herunter. 7 Tage kostenlos testen. Kompatibel mit OMAX® MAKE und DXF.">
   <link rel="canonical" href="https://www.blechkalkulator.de/download.html">
 
+  <!-- Umami Web Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8d7f33bf-65d5-4ce3-b71d-ab7edef576dc"></script>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -64,8 +67,8 @@
   class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950 min-h-screen flex flex-col justify-between">
 
   <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       <a href="index.html" class="flex items-center gap-3">
         <div
           class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-cyan-500/20">
@@ -74,10 +77,27 @@
         <span class="text-xl font-bold tracking-tight text-white">Blechkalkulator <span
             class="text-cyan-400">Pro</span></span>
       </a>
-      <a href="index.html"
-        class="text-sm font-medium text-slate-300 hover:text-white transition flex items-center gap-2">
-        <i class="fa-solid fa-arrow-left text-xs"></i> Zurück zur Startseite
-      </a>
+
+      <!-- Right Actions: Language Switcher + Back to Home -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Language Switcher -->
+        <div
+          class="inline-flex items-center bg-slate-900 border border-slate-800 rounded-xl p-1 text-xs font-semibold shrink-0 shadow-inner">
+          <button id="lang-de-btn" onclick="setLanguage('de')"
+            class="px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400 whitespace-nowrap">
+            <span>🇩🇪</span> <span>DE</span>
+          </button>
+          <button id="lang-en-btn" onclick="setLanguage('en')"
+            class="px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 text-slate-400 hover:text-white whitespace-nowrap">
+            <span>🇬🇧</span> <span>EN</span>
+          </button>
+        </div>
+
+        <a href="index.html"
+          class="text-xs sm:text-sm font-medium text-slate-300 hover:text-white transition flex items-center gap-2">
+          <i class="fa-solid fa-arrow-left text-xs"></i> <span data-i18n="nav_back_home">Zurück zur Startseite</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -85,7 +105,7 @@
   <main class="py-16 px-4 sm:px-6 lg:px-8 flex-grow flex items-center">
     <div class="max-w-3xl mx-auto w-full text-center">
 
-      <!-- Animated Check Icon -->
+      <!-- Animated Download Icon -->
       <div
         class="w-20 h-20 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-3xl mx-auto mb-8 shadow-xl shadow-emerald-500/10 animate-bounce">
         <i class="fa-solid fa-download"></i>
@@ -95,21 +115,21 @@
         <div
           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-slate-300">
           <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Offizielles Release: Version 1.0.8 (64-Bit)</span>
+          <span data-i18n="release_badge">Offizielles Release: Version 1.0.8 (64-Bit)</span>
         </div>
         <a href="changelog.html"
           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/20 text-xs font-medium transition">
           <i class="fa-solid fa-list-check text-[11px]"></i>
-          <span>Was ist neu? (Changelog)</span>
+          <span data-i18n="btn_changelog">Was ist neu? (Changelog)</span>
         </a>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4" data-i18n-html="download_title">
         Vielen Dank! Dein Download <br class="hidden sm:inline"><span class="gradient-text">startet
           automatisch...</span>
       </h1>
 
-      <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+      <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed" data-i18n="download_subtitle">
         Sollte der Download nicht in wenigen Sekunden automatisch beginnen, klicke bitte auf den folgenden Button:
       </p>
 
@@ -119,7 +139,7 @@
           href="https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.8/Blechkalkulator_Pro_Setup_v1.0.8.zip"
           class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-500 hover:to-emerald-500 text-white font-bold text-base transition shadow-xl shadow-cyan-600/30 hover:scale-[1.02]">
           <i class="fa-solid fa-file-zipper text-xl"></i>
-          <span>Setup als ZIP herunterladen (Empfohlen, 60 MB)</span>
+          <span data-i18n="btn_download_zip">Setup als ZIP herunterladen (Empfohlen, 60 MB)</span>
         </a>
       </div>
 
@@ -128,7 +148,7 @@
         <a href="https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.8/Blechkalkulator_Pro_Setup_v1.0.8.exe"
           class="text-xs text-slate-400 hover:text-cyan-400 transition underline inline-flex items-center gap-1.5">
           <i class="fa-solid fa-file-arrow-down text-[11px]"></i>
-          Alternative: Direkter .exe Download (60 MB)
+          <span data-i18n="btn_download_exe">Alternative: Direkter .exe Download (60 MB)</span>
         </a>
       </div>
 
@@ -136,25 +156,25 @@
       <div
         class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 text-left shadow-2xl backdrop-blur-xl glow-cyan mb-10">
         <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-          <i class="fa-solid fa-circle-check text-cyan-400"></i> In 3 Schritten startklar:
+          <i class="fa-solid fa-circle-check text-cyan-400"></i> <span data-i18n="steps_title">In 3 Schritten startklar:</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
-            <div class="text-cyan-400 font-bold text-sm">1. ZIP entpacken</div>
-            <div class="text-xs text-slate-300">Lade <code>Blechkalkulator_Pro_Setup_v1.0.8.zip</code> herunter und
+            <div class="text-cyan-400 font-bold text-sm" data-i18n="step1_title">1. ZIP entpacken</div>
+            <div class="text-xs text-slate-300" data-i18n-html="step1_desc">Lade <code>Blechkalkulator_Pro_Setup_v1.0.8.zip</code> herunter und
               entpacke die Datei (Rechtsklick &rarr; Alle extrahieren).</div>
           </div>
 
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
-            <div class="text-cyan-400 font-bold text-sm">2. Installieren</div>
-            <div class="text-xs text-slate-300">Starte <code>Blechkalkulator_Pro_Setup_v1.0.8.exe</code> und folge dem
+            <div class="text-cyan-400 font-bold text-sm" data-i18n="step2_title">2. Installieren</div>
+            <div class="text-xs text-slate-300" data-i18n-html="step2_desc">Starte <code>Blechkalkulator_Pro_Setup_v1.0.8.exe</code> und folge dem
               kurzen Setup-Assistenten.</div>
           </div>
 
           <div class="space-y-2 p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
-            <div class="text-cyan-400 font-bold text-sm">3. Loslegen</div>
-            <div class="text-xs text-slate-300">Starte die App vom Desktop und teste sofort alle Funktionen 7 Tage
+            <div class="text-cyan-400 font-bold text-sm" data-i18n="step3_title">3. Loslegen</div>
+            <div class="text-xs text-slate-300" data-i18n="step3_desc">Starte die App vom Desktop und teste sofort alle Funktionen 7 Tage
               unverbindlich!</div>
           </div>
         </div>
@@ -165,11 +185,11 @@
         class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 text-left shadow-2xl backdrop-blur-xl glow-cyan mb-10 overflow-hidden">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
           <h2 class="text-lg font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-microchip text-cyan-400"></i> Systemanforderungen für Blechkalkulator Pro
+            <i class="fa-solid fa-microchip text-cyan-400"></i> <span data-i18n="req_title">Systemanforderungen für Blechkalkulator Pro</span>
           </h2>
           <span
             class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
-            <i class="fa-solid fa-circle-check text-[10px]"></i> 64-Bit Windows
+            <i class="fa-solid fa-circle-check text-[10px]"></i> <span data-i18n="req_win_badge">64-Bit Windows</span>
           </span>
         </div>
 
@@ -177,58 +197,57 @@
           <table class="w-full text-left text-xs sm:text-sm text-slate-300">
             <thead>
               <tr class="border-b border-slate-800 text-slate-400 text-xs uppercase tracking-wider bg-slate-950/40">
-                <th class="py-3 px-4 font-semibold">Komponente</th>
-                <th class="py-3 px-4 font-semibold text-amber-400/90">Mindestanforderung (Minimum)</th>
-                <th class="py-3 px-4 font-semibold text-emerald-400/90">Empfohlenes System</th>
+                <th class="py-3 px-4 font-semibold" data-i18n="th_component">Komponente</th>
+                <th class="py-3 px-4 font-semibold text-amber-400/90" data-i18n="th_min">Mindestanforderung (Minimum)</th>
+                <th class="py-3 px-4 font-semibold text-emerald-400/90" data-i18n="th_rec">Empfohlenes System</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-800/60">
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-brands fa-windows text-cyan-400 w-4"></i> Betriebssystem</td>
-                <td class="py-3 px-4 text-slate-300">Windows 10 (64-Bit, Version 1903 oder neuer)</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">Windows 10 / Windows 11 (64-Bit)</td>
+                    class="fa-brands fa-windows text-cyan-400 w-4"></i> <span data-i18n="req_os">Betriebssystem</span></td>
+                <td class="py-3 px-4 text-slate-300" data-i18n="req_os_min">Windows 10 (64-Bit, Version 1903 oder neuer)</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_os_rec">Windows 10 / Windows 11 (64-Bit)</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-microchip text-cyan-400 w-4"></i> Prozessor (CPU)</td>
-                <td class="py-3 px-4 text-slate-300">Intel Core i3 / i5 (ab 4. Gen) oder AMD Ryzen mit mind. 2.5 GHz
-                </td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">Intel Core i5 / i7 (ab 6. Gen) oder AMD Ryzen 5</td>
+                    class="fa-solid fa-microchip text-cyan-400 w-4"></i> <span data-i18n="req_cpu">Prozessor (CPU)</span></td>
+                <td class="py-3 px-4 text-slate-300" data-i18n="req_cpu_min">Intel Core i3 / i5 (ab 4. Gen) oder AMD Ryzen mit mind. 2.5 GHz</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_cpu_rec">Intel Core i5 / i7 (ab 6. Gen) oder AMD Ryzen 5</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-memory text-cyan-400 w-4"></i> Arbeitsspeicher (RAM)</td>
+                    class="fa-solid fa-memory text-cyan-400 w-4"></i> <span data-i18n="req_ram">Arbeitsspeicher (RAM)</span></td>
                 <td class="py-3 px-4 text-slate-300">8 GB RAM</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">16 GB RAM oder mehr</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_ram_rec">16 GB RAM oder mehr</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-desktop text-cyan-400 w-4"></i> Grafikkarte (GPU)</td>
-                <td class="py-3 px-4 text-slate-300">DirectX 11-kompatible GPU / Intel HD Graphics ab 500er-Serie</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">NVIDIA GeForce / AMD Radeon mit dediziertem VRAM</td>
+                    class="fa-solid fa-desktop text-cyan-400 w-4"></i> <span data-i18n="req_gpu">Grafikkarte (GPU)</span></td>
+                <td class="py-3 px-4 text-slate-300" data-i18n="req_gpu_min">DirectX 11-kompatible GPU / Intel HD Graphics ab 500er-Serie</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_gpu_rec">NVIDIA GeForce / AMD Radeon mit dediziertem VRAM</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-sliders text-cyan-400 w-4"></i> Grafiktreiber</td>
-                <td class="py-3 px-4 text-slate-300">WDDM 2.0 oder neuer</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">Aktuelle Hersteller-Grafiktreiber</td>
+                    class="fa-solid fa-sliders text-cyan-400 w-4"></i> <span data-i18n="req_driver">Grafiktreiber</span></td>
+                <td class="py-3 px-4 text-slate-300" data-i18n="req_driver_min">WDDM 2.0 oder neuer</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_driver_rec">Aktuelle Hersteller-Grafiktreiber</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-hard-drive text-cyan-400 w-4"></i> Festplattenspeicher</td>
-                <td class="py-3 px-4 text-slate-300">Mind. 500 MB freier Speicherplatz (SSD empfohlen)</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">SSD mit mind. 1 GB freiem Speicher</td>
+                    class="fa-solid fa-hard-drive text-cyan-400 w-4"></i> <span data-i18n="req_disk">Festplattenspeicher</span></td>
+                <td class="py-3 px-4 text-slate-300" data-i18n="req_disk_min">Mind. 500 MB freier Speicherplatz (SSD empfohlen)</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_disk_rec">SSD mit mind. 1 GB freiem Speicher</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-expand text-cyan-400 w-4"></i> Bildschirmauflösung</td>
+                    class="fa-solid fa-expand text-cyan-400 w-4"></i> <span data-i18n="req_res">Bildschirmauflösung</span></td>
                 <td class="py-3 px-4 text-slate-300">1280 × 1024 Pixel</td>
-                <td class="py-3 px-4 text-emerald-300 font-medium">1920 × 1080 (Full HD) oder höher</td>
+                <td class="py-3 px-4 text-emerald-300 font-medium" data-i18n="req_res_rec">1920 × 1080 (Full HD) oder höher</td>
               </tr>
               <tr class="hover:bg-slate-800/30 transition">
                 <td class="py-3 px-4 font-medium text-white flex items-center gap-2"><i
-                    class="fa-solid fa-bolt text-cyan-400 w-4"></i> Software-Kompatibilität</td>
+                    class="fa-solid fa-bolt text-cyan-400 w-4"></i> <span data-i18n="req_comp">Software-Kompatibilität</span></td>
                 <td class="py-3 px-4 text-slate-300">OMAX® MAKE / IntelliMAX®</td>
                 <td class="py-3 px-4 text-emerald-300 font-medium">OMAX® MAKE / IntelliMAX® (Version 20+)</td>
               </tr>
@@ -237,14 +256,11 @@
         </div>
       </div>
 
-      <!-- Requirements Badge -->
+      <!-- Requirements Badges -->
       <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
-        <span class="flex items-center gap-1.5"><i class="fa-brands fa-windows text-cyan-400"></i> Windows 10 / 11
-          (64-Bit)</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-400"></i> 100%
-          Virengeprüft & Offline-First</span>
-        <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> Kompatibel mit OMAX®
-          MAKE</span>
+        <span class="flex items-center gap-1.5"><i class="fa-brands fa-windows text-cyan-400"></i> <span data-i18n="badge_win">Windows 10 / 11 (64-Bit)</span></span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-emerald-400"></i> <span data-i18n="badge_virus">100% Virengeprüft & Offline-First</span></span>
+        <span class="flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> <span data-i18n="badge_omax">Kompatibel mit OMAX® MAKE</span></span>
       </div>
 
     </div>
@@ -253,22 +269,154 @@
   <!-- Footer -->
   <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
-      <div>© 2026 Cedric Müllers. Alle Rechte vorbehalten.</div>
+      <div data-i18n="footer_rights">© 2026 Cedric Müllers. Alle Rechte vorbehalten.</div>
       <div class="flex items-center justify-center gap-4">
-        <a href="changelog.html" class="hover:text-slate-400">Changelog</a>
+        <a href="changelog.html" class="hover:text-slate-400" data-i18n="footer_changelog">Changelog</a>
         <span>•</span>
-        <a href="impressum.html" class="hover:text-slate-400">Impressum</a>
+        <a href="impressum.html" class="hover:text-slate-400" data-i18n="footer_imprint">Impressum</a>
         <span>•</span>
-        <a href="datenschutz.html" class="hover:text-slate-400">Datenschutz</a>
+        <a href="datenschutz.html" class="hover:text-slate-400" data-i18n="footer_privacy">Datenschutz</a>
         <span>•</span>
-        <a href="agb.html" class="hover:text-slate-400">Lizenzbedingungen (EULA)</a>
+        <a href="agb.html" class="hover:text-slate-400" data-i18n="footer_eula">Lizenzbedingungen (EULA)</a>
       </div>
     </div>
   </footer>
 
-  <!-- Auto Download Script -->
+  <!-- Multilingual Dictionary & Client Script -->
   <script>
+    const I18N_DATA = {
+      de: {
+        nav_back_home: "Zurück zur Startseite",
+        release_badge: "Offizielles Release: Version 1.0.8 (64-Bit)",
+        btn_changelog: "Was ist neu? (Changelog)",
+        download_title: 'Vielen Dank! Dein Download <br class="hidden sm:inline"><span class="gradient-text">startet automatisch...</span>',
+        download_subtitle: "Sollte der Download nicht in wenigen Sekunden automatisch beginnen, klicke bitte auf den folgenden Button:",
+        btn_download_zip: "Setup als ZIP herunterladen (Empfohlen, 60 MB)",
+        btn_download_exe: "Alternative: Direkter .exe Download (60 MB)",
+        steps_title: "In 3 Schritten startklar:",
+        step1_title: "1. ZIP entpacken",
+        step1_desc: "Lade <code>Blechkalkulator_Pro_Setup_v1.0.8.zip</code> herunter und entpacke die Datei (Rechtsklick &rarr; Alle extrahieren).",
+        step2_title: "2. Installieren",
+        step2_desc: "Starte <code>Blechkalkulator_Pro_Setup_v1.0.8.exe</code> und folge dem kurzen Setup-Assistenten.",
+        step3_title: "3. Loslegen",
+        step3_desc: "Starte die App vom Desktop und teste sofort alle Funktionen 7 Tage unverbindlich!",
+        req_title: "Systemanforderungen für Blechkalkulator Pro",
+        req_win_badge: "64-Bit Windows",
+        th_component: "Komponente",
+        th_min: "Mindestanforderung (Minimum)",
+        th_rec: "Empfohlenes System",
+        req_os: "Betriebssystem",
+        req_os_min: "Windows 10 (64-Bit, Version 1903 oder neuer)",
+        req_os_rec: "Windows 10 / Windows 11 (64-Bit)",
+        req_cpu: "Prozessor (CPU)",
+        req_cpu_min: "Intel Core i3 / i5 (ab 4. Gen) oder AMD Ryzen mit mind. 2.5 GHz",
+        req_cpu_rec: "Intel Core i5 / i7 (ab 6. Gen) oder AMD Ryzen 5",
+        req_ram: "Arbeitsspeicher (RAM)",
+        req_ram_rec: "16 GB RAM oder mehr",
+        req_gpu: "Grafikkarte (GPU)",
+        req_gpu_min: "DirectX 11-kompatible GPU / Intel HD Graphics ab 500er-Serie",
+        req_gpu_rec: "NVIDIA GeForce / AMD Radeon mit dediziertem VRAM",
+        req_driver: "Grafiktreiber",
+        req_driver_min: "WDDM 2.0 oder neuer",
+        req_driver_rec: "Aktuelle Hersteller-Grafiktreiber",
+        req_disk: "Festplattenspeicher",
+        req_disk_min: "Mind. 500 MB freier Speicherplatz (SSD empfohlen)",
+        req_disk_rec: "SSD mit mind. 1 GB freiem Speicher",
+        req_res: "Bildschirmauflösung",
+        req_res_rec: "1920 × 1080 (Full HD) oder höher",
+        req_comp: "Software-Kompatibilität",
+        badge_win: "Windows 10 / 11 (64-Bit)",
+        badge_virus: "100% Virengeprüft & Offline-First",
+        badge_omax: "Kompatibel mit OMAX® MAKE",
+        footer_rights: "© 2026 Cedric Müllers. Alle Rechte vorbehalten.",
+        footer_changelog: "Changelog",
+        footer_imprint: "Impressum",
+        footer_privacy: "Datenschutz",
+        footer_eula: "Lizenzbedingungen (EULA)"
+      },
+      en: {
+        nav_back_home: "Back to Home",
+        release_badge: "Official Release: Version 1.0.8 (64-Bit)",
+        btn_changelog: "What's New? (Changelog)",
+        download_title: 'Thank you! Your download <br class="hidden sm:inline"><span class="gradient-text">is starting automatically...</span>',
+        download_subtitle: "If your download does not begin in a few seconds, please click the button below:",
+        btn_download_zip: "Download Setup as ZIP (Recommended, 60 MB)",
+        btn_download_exe: "Alternative: Direct .exe Download (60 MB)",
+        steps_title: "Ready in 3 simple steps:",
+        step1_title: "1. Extract ZIP",
+        step1_desc: "Download <code>Blechkalkulator_Pro_Setup_v1.0.8.zip</code> and extract the archive (Right click &rarr; Extract All).",
+        step2_title: "2. Install",
+        step2_desc: "Run <code>Blechkalkulator_Pro_Setup_v1.0.8.exe</code> and follow the quick setup wizard.",
+        step3_title: "3. Launch & Quote",
+        step3_desc: "Launch the app from your desktop and test all features free for 7 days without obligation!",
+        req_title: "System Requirements for Blechkalkulator Pro",
+        req_win_badge: "64-Bit Windows",
+        th_component: "Component",
+        th_min: "Minimum Requirement",
+        th_rec: "Recommended System",
+        req_os: "Operating System",
+        req_os_min: "Windows 10 (64-bit, Version 1903 or newer)",
+        req_os_rec: "Windows 10 / Windows 11 (64-bit)",
+        req_cpu: "Processor (CPU)",
+        req_cpu_min: "Intel Core i3 / i5 (4th Gen+) or AMD Ryzen 2.5 GHz+",
+        req_cpu_rec: "Intel Core i5 / i7 (6th Gen+) or AMD Ryzen 5",
+        req_ram: "Memory (RAM)",
+        req_ram_rec: "16 GB RAM or more",
+        req_gpu: "Graphics Card (GPU)",
+        req_gpu_min: "DirectX 11-compatible GPU / Intel HD Graphics 500 series+",
+        req_gpu_rec: "NVIDIA GeForce / AMD Radeon with dedicated VRAM",
+        req_driver: "Graphics Driver",
+        req_driver_min: "WDDM 2.0 or newer",
+        req_driver_rec: "Current manufacturer drivers",
+        req_disk: "Disk Space",
+        req_disk_min: "Min. 500 MB free space (SSD recommended)",
+        req_disk_rec: "SSD with min. 1 GB free space",
+        req_res: "Screen Resolution",
+        req_res_rec: "1920 × 1080 (Full HD) or higher",
+        req_comp: "Software Compatibility",
+        badge_win: "Windows 10 / 11 (64-bit)",
+        badge_virus: "100% Virus-Checked & Offline-First",
+        badge_omax: "Compatible with OMAX® MAKE",
+        footer_rights: "© 2026 Cedric Müllers. All rights reserved.",
+        footer_changelog: "Changelog",
+        footer_imprint: "Legal Notice",
+        footer_privacy: "Privacy Policy",
+        footer_eula: "Terms & Licensing (EULA)"
+      }
+    };
+
+    let currentLang = 'de';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('site_lang', lang);
+
+      const deBtn = document.getElementById('lang-de-btn');
+      const enBtn = document.getElementById('lang-en-btn');
+      if (lang === 'de') {
+        deBtn.className = "px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400 whitespace-nowrap";
+        enBtn.className = "px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 text-slate-400 hover:text-white whitespace-nowrap";
+      } else {
+        enBtn.className = "px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 bg-cyan-500/20 text-cyan-400 whitespace-nowrap";
+        deBtn.className = "px-2.5 py-1 rounded-lg transition flex items-center gap-1.5 text-slate-400 hover:text-white whitespace-nowrap";
+      }
+
+      const dict = I18N_DATA[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('site_lang') || 'de';
+      setLanguage(saved);
+
       const downloadUrl = "https://github.com/Cedi1991/Blechkalkulator/releases/download/v1.0.8/Blechkalkulator_Pro_Setup_v1.0.8.zip";
       setTimeout(() => {
         window.location.href = downloadUrl;
